@@ -7,6 +7,7 @@ import com.alcodiary.drink.DrinkType
 val beer = DrinkType("Beer", 4, 7)
 val wine = DrinkType("Wine", 10, 17)
 val vodka = DrinkType("Vodka", 37, 42)
+val allDrinkTypes = listOf(beer, wine, vodka)
 
 //Drinks
 val beers = listOf(
