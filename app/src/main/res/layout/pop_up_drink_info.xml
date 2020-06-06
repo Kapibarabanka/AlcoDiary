@@ -20,8 +20,8 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/nameRow" android:gravity="center"
-                android:layout_weight="1">
+                android:layout_height="wrap_content" android:id="@+id/nameRow" android:layout_weight="1"
+                android:gravity="center">
             <TextView
                     android:text="Name"
                     android:layout_width="wrap_content"
@@ -36,21 +36,24 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/typeRow" android:gravity="center"
-                android:layout_weight="1">
+                android:layout_height="wrap_content" android:id="@+id/typeRow" android:layout_weight="1"
+                android:gravity="center">
             <TextView
                     android:text="Type"
                     android:layout_width="103dp"
                     android:layout_height="wrap_content" android:id="@+id/typeLabel" android:layout_weight="1"/>
-            <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/typeSpinner" android:layout_weight="1"/>
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/typeText" android:layout_weight="1"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/markRow" android:gravity="center"
-                android:layout_weight="1">
+                android:layout_height="wrap_content" android:id="@+id/markRow" android:layout_weight="1"
+                android:gravity="center">
             <TextView
                     android:text="Mark"
                     android:layout_width="wrap_content"
@@ -65,8 +68,8 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/alcoRow" android:gravity="center"
-                android:layout_weight="1">
+                android:layout_height="wrap_content" android:id="@+id/alcoRow" android:layout_weight="1"
+                android:gravity="center">
             <TextView
                     android:text="Alco %"
                     android:layout_width="wrap_content"
@@ -88,10 +91,19 @@
                 android:inputType="textMultiLine"
                 android:ems="10"
                 android:id="@+id/commentText" android:layout_weight="7"/>
-        <Button
-                android:text="save"
+        <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/saveButton" android:layout_weight="1"
-                android:onClick="onSaveClicked"/>
+                android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center">
+            <Button
+                    android:text="Delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/deleteButton" android:layout_weight="1"/>
+            <Button
+                    android:text="Edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/editButton" android:onClick="onSaveClicked"
+                    android:layout_weight="1"/>
+        </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

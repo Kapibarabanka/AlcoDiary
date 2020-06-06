@@ -7,17 +7,20 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.alcodiary.R
 import com.alcodiary.allDrinks
 import kotlinx.android.synthetic.main.fragment_drinks.*
 
-class DrinksFragment : Fragment() {
+const val selectedDrinkExtra = "SELECTED_DRINK"
+
+class DrinksFragment : Fragment(), DrinkListAdapter.OnDrinkListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
     }
+
+    private val drinksAdapter = DrinkListAdapter(allDrinks, this)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater?.inflate(R.layout.fragment_drinks, null)
@@ -31,11 +34,17 @@ class DrinksFragment : Fragment() {
             // RecyclerView behavior
             layoutManager = LinearLayoutManager(activity)
             // set the custom adapter to the RecyclerView
-            adapter = DrinkListAdapter(allDrinks)
+            adapter = drinksAdapter
         }
+
         fabAddDrink.setOnClickListener {innerView ->
             onFabAddDrinkClicked(innerView)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        drinksAdapter.notifyDataSetChanged()
     }
 
     fun onFabAddDrinkClicked (view: View) {
@@ -47,4 +56,11 @@ class DrinksFragment : Fragment() {
         fun newInstance(): DrinksFragment = DrinksFragment()
     }
 
+    override fun onDrinkClick(position: Int) {
+        val intent = Intent(activity?.applicationContext, DrinkInfoPopUp::class.java)
+        intent.putExtra(selectedDrinkExtra, allDrinks[position])
+        startActivity(intent)
+    }
+
 }
+

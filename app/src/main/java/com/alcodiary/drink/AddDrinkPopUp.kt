@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.alcodiary.R
 import com.alcodiary.allDrinkTypes
+import com.alcodiary.allDrinks
 import kotlinx.android.synthetic.main.pop_up_add_drink.*
 
 
@@ -37,12 +38,21 @@ class AddDrinkPopUp : AppCompatActivity() {
                 onDrinkTypeSelected(parent, view, position, id)
             }
         }
-
-
     }
 
     fun onDrinkTypeSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
 
+    }
+
+    fun onSaveClicked(view: View) {
+        val name = nameText.text.toString()
+        val type: DrinkType = allDrinkTypes[typeSpinner.selectedItemPosition]
+        val mark = markText.text.toString().toInt()
+        val comment = commentText.text.toString()
+        allDrinks.add(0, Drink(name, type, mark, comment))
+        nameText.setText("")
+        markText.setText("")
+        commentText.setText("")
     }
 
 }
