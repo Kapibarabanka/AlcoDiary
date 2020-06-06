@@ -11,7 +11,7 @@ import com.alcodiary.R
 import com.alcodiary.allDrinks
 import kotlinx.android.synthetic.main.fragment_drinks.*
 
-const val selectedDrinkExtra = "SELECTED_DRINK"
+const val selectedDrinkPositionExtra = "SELECTED_DRINK_POSITION"
 
 class DrinksFragment : Fragment(), DrinkListAdapter.OnDrinkListener {
 
@@ -58,7 +58,7 @@ class DrinksFragment : Fragment(), DrinkListAdapter.OnDrinkListener {
 
     override fun onDrinkClick(position: Int) {
         val intent = Intent(activity?.applicationContext, DrinkInfoPopUp::class.java)
-        intent.putExtra(selectedDrinkExtra, allDrinks[position])
+        intent.putExtra(selectedDrinkPositionExtra, position)
         startActivity(intent)
     }
 

@@ -2,7 +2,7 @@ package com.alcodiary.drink
 
 import java.io.Serializable
 
-class DrinkType(val name: String, val minAlco: Int, val maxAlco: Int): Serializable {
+class DrinkType(val name: String, val minAlco: Int, val maxAlco: Int) {
     val defaultAlco: Int
         get() = (this.minAlco + this.maxAlco) / 2
 
