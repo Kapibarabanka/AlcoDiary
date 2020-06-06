@@ -41,18 +41,17 @@ class AddDrinkPopUp : AppCompatActivity() {
     }
 
     fun onDrinkTypeSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-
+        val selectedType = allDrinkTypes[position]
+        alcoText.setText(selectedType.defaultAlco.toString())
     }
 
     fun onSaveClicked(view: View) {
         val name = nameText.text.toString()
-        val type: DrinkType = allDrinkTypes[typeSpinner.selectedItemPosition]
+        val type = allDrinkTypes[typeSpinner.selectedItemPosition]
         val mark = markText.text.toString().toInt()
         val comment = commentText.text.toString()
         allDrinks.add(0, Drink(name, type, mark, comment))
-        nameText.setText("")
-        markText.setText("")
-        commentText.setText("")
+        finish()
     }
 
 }
