@@ -28,12 +28,8 @@ class DrinksFragment : Fragment(), DrinkListAdapter.OnDrinkListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // RecyclerView node initialized here
         recycler_view_drinks.apply {
-            // set a LinearLayoutManager to handle Android
-            // RecyclerView behavior
             layoutManager = LinearLayoutManager(activity)
-            // set the custom adapter to the RecyclerView
             adapter = drinksAdapter
         }
 
@@ -42,13 +38,19 @@ class DrinksFragment : Fragment(), DrinkListAdapter.OnDrinkListener {
         }
     }
 
+    override fun onPause() {
+        super.onPause()
+        fabAddDrink.hide()
+    }
+
     override fun onResume() {
         super.onResume()
+        fabAddDrink.show()
         drinksAdapter.notifyDataSetChanged()
     }
 
     fun onFabAddDrinkClicked (view: View) {
-        val intent = Intent(activity?.applicationContext, AddDrinkPopUp::class.java)
+        val intent = Intent(activity?.applicationContext, SaveDrinkPopUp::class.java)
         startActivity(intent)
     }
 

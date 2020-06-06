@@ -1,5 +1,6 @@
 package com.alcodiary.drink
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
@@ -9,7 +10,9 @@ import com.alcodiary.allDrinks
 import kotlinx.android.synthetic.main.pop_up_drink_info.*
 
 class DrinkInfoPopUp  : AppCompatActivity() {
+
     var selectedDrinkPosition = -1
+    lateinit var selectedDrink: Drink
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,13 +27,13 @@ class DrinkInfoPopUp  : AppCompatActivity() {
         window.setLayout(width, height)
 
         selectedDrinkPosition = intent.getIntExtra(selectedDrinkPositionExtra, -1)
-        val selectedDrink = allDrinks[selectedDrinkPosition]
+        selectedDrink = allDrinks[selectedDrinkPosition]
+        showDrinkinfo(selectedDrink)
+    }
 
-        nameText.setText(selectedDrink.name)
-        typeText.setText(selectedDrink.type.toString())
-        markText.setText(selectedDrink.mark.toString())
-        alcoText.setText(selectedDrink.alco.toString())
-        commentText.setText(selectedDrink.comment)
+    override fun onResume() {
+        super.onResume()
+        showDrinkinfo(selectedDrink)
     }
 
     fun onDeleteClicked(view: View) {
@@ -39,6 +42,16 @@ class DrinkInfoPopUp  : AppCompatActivity() {
     }
 
     fun onEditClicked(view: View) {
+        val intent = Intent(applicationContext, SaveDrinkPopUp::class.java)
+        intent.putExtra(selectedDrinkPositionExtra, selectedDrinkPosition)
+        startActivity(intent)
+    }
 
+    private fun showDrinkinfo(drink: Drink) {
+        nameText.setText(drink.name)
+        typeText.setText(drink.type.toString())
+        markText.setText(drink.mark.toString())
+        alcoText.setText(drink.alco.toString())
+        commentText.setText(drink.comment)
     }
 }

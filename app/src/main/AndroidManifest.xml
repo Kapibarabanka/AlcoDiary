@@ -10,7 +10,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".drink.AddDrinkPopUp"
+                android:name=".drink.SaveDrinkPopUp"
                 android:theme="@style/AppTheme.PopMe">
         </activity>
         <activity
