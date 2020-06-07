@@ -1,0 +1,23 @@
+language: android
+android:
+  components:
+  # Update Android SDK Tools
+  - tools
+  - android-28
+  - build-tools-27.0.3
+
+  # Support library
+  - extra-android-support
+  - extra-android-m2repository
+
+env:
+  global:
+  # install timeout in minutes (2 minutes by default)
+  - ADB_INSTALL_TIMEOUT=8
+
+before_install:
+  - chmod +x ./gradlew
+
+# Run assemble and unit tests
+script:
+  - ./gradlew clean assembleDebug
