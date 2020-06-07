@@ -1,4 +1,4 @@
-package com.alcodiary.drink
+package com.kapibarabanka.alcodiary.drink
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -6,9 +6,9 @@ import android.util.DisplayMetrics
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import com.alcodiary.R
-import com.alcodiary.allDrinkTypes
-import com.alcodiary.allDrinks
+import com.kapibarabanka.alcodiary.R
+import com.kapibarabanka.alcodiary.allDrinkTypes
+import com.kapibarabanka.alcodiary.allDrinks
 import kotlinx.android.synthetic.main.pop_up_save_drink.*
 
 class SaveDrinkPopUp : AppCompatActivity() {

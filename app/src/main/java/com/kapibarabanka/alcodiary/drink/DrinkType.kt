@@ -1,6 +1,4 @@
-package com.alcodiary.drink
-
-import java.io.Serializable
+package com.kapibarabanka.alcodiary.drink
 
 class DrinkType(val name: String, val minAlco: Int, val maxAlco: Int) {
     val defaultAlco: Int

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.alcodiary">
+<manifest
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.kapibarabanka.alcodiary">
 
     <application
             android:allowBackup="true"
@@ -10,15 +11,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".drink.SaveDrinkPopUp"
+                android:name="com.kapibarabanka.alcodiary.drink.SaveDrinkPopUp"
                 android:theme="@style/AppTheme.PopMe">
         </activity>
         <activity
-                android:name=".drink.DrinkInfoPopUp"
+                android:name="com.kapibarabanka.alcodiary.drink.DrinkInfoPopUp"
                 android:theme="@style/AppTheme.PopMe">
         </activity>
         <activity
-                android:name=".MainActivity"
+                android:name="com.kapibarabanka.alcodiary.MainActivity"
                 android:label="@string/app_name"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

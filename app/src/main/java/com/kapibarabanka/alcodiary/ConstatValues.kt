@@ -1,7 +1,7 @@
-package com.alcodiary
+package com.kapibarabanka.alcodiary
 
-import com.alcodiary.drink.Drink
-import com.alcodiary.drink.DrinkType
+import com.kapibarabanka.alcodiary.drink.Drink
+import com.kapibarabanka.alcodiary.drink.DrinkType
 
 // Drink types
 val beer = DrinkType("Beer", 4, 7)

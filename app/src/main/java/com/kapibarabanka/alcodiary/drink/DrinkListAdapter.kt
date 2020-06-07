@@ -1,11 +1,11 @@
-package com.alcodiary.drink
+package com.kapibarabanka.alcodiary.drink
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.alcodiary.R
+import com.kapibarabanka.alcodiary.R
 
 class DrinkListAdapter(private val list: List<Drink>, private val onDrinkListener: OnDrinkListener)
     : RecyclerView.Adapter<DrinkListAdapter.DrinkViewHolder>() {

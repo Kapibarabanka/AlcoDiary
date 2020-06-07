@@ -1,12 +1,12 @@
-package com.alcodiary.drink
+package com.kapibarabanka.alcodiary.drink
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
 import android.view.View
-import com.alcodiary.R
-import com.alcodiary.allDrinks
+import com.kapibarabanka.alcodiary.R
+import com.kapibarabanka.alcodiary.allDrinks
 import kotlinx.android.synthetic.main.pop_up_drink_info.*
 
 class DrinkInfoPopUp  : AppCompatActivity() {
