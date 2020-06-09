@@ -1,4 +1,4 @@
-package com.kapibarabanka.alcodiary.drink
+package com.kapibarabanka.alcodiary.drinks
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,14 +13,14 @@ import kotlinx.android.synthetic.main.fragment_drinks.*
 
 const val selectedDrinkPositionExtra = "SELECTED_DRINK_POSITION"
 
-class DrinksFragment : Fragment(), DrinkListAdapter.OnDrinkListener {
+class DrinksFragment : Fragment(), DrinksListAdapter.OnDrinkListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
     }
 
-    private val drinksAdapter = DrinkListAdapter(allDrinks, this)
+    private val drinksAdapter = DrinksListAdapter(allDrinks, this)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater?.inflate(R.layout.fragment_drinks, null)

@@ -1,4 +1,4 @@
-package com.kapibarabanka.alcodiary.drink
+package com.kapibarabanka.alcodiary.drinks
 
 import android.content.Intent
 import android.os.Bundle

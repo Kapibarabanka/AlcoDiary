@@ -11,11 +11,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name="com.kapibarabanka.alcodiary.drink.SaveDrinkPopUp"
+                android:name="com.kapibarabanka.alcodiary.drinks.SaveDrinkPopUp"
                 android:theme="@style/AppTheme.PopMe">
         </activity>
         <activity
-                android:name="com.kapibarabanka.alcodiary.drink.DrinkInfoPopUp"
+                android:name="com.kapibarabanka.alcodiary.drinks.SaveDrinkTypePopUp"
+                android:theme="@style/AppTheme.PopMe">
+        </activity>
+        <activity
+                android:name="com.kapibarabanka.alcodiary.drinks.DrinkInfoPopUp"
                 android:theme="@style/AppTheme.PopMe">
         </activity>
         <activity

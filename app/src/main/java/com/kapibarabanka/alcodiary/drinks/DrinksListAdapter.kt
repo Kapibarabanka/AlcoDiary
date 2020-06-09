@@ -1,4 +1,4 @@
-package com.kapibarabanka.alcodiary.drink
+package com.kapibarabanka.alcodiary.drinks
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.kapibarabanka.alcodiary.R
 
-class DrinkListAdapter(private val list: List<Drink>, private val onDrinkListener: OnDrinkListener)
-    : RecyclerView.Adapter<DrinkListAdapter.DrinkViewHolder>() {
+class DrinksListAdapter(private val list: List<Drink>, private val onDrinkListener: OnDrinkListener)
+    : RecyclerView.Adapter<DrinksListAdapter.DrinkViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DrinkViewHolder {
         val inflater = LayoutInflater.from(parent.context)
