@@ -8,92 +8,220 @@
         android:background="@drawable/pop_bg"
         tools:context="com.kapibarabanka.alcodiary.drinks.SaveDrinkPopUp"
         android:layout_gravity="center">
+
     <LinearLayout
-            android:orientation="vertical"
+            android:id="@+id/linearLayout"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:id="@+id/linearLayout"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:layout_marginRight="8dp">
+            android:background="#96E9D6"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/nameRow" android:gravity="center"
-                android:layout_weight="1">
-            <TextView
-                    android:text="Name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/nameLabel" android:layout_weight="1"/>
-            <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/nameText" android:layout_weight="1"/>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/typeRow" android:gravity="center"
-                android:layout_weight="1">
-            <TextView
-                    android:text="Type"
-                    android:layout_width="103dp"
-                    android:layout_height="wrap_content" android:id="@+id/typeLabel" android:layout_weight="1"/>
-            <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/typeSpinner" android:layout_weight="1"/>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/markRow" android:gravity="center"
-                android:layout_weight="1">
-            <TextView
-                    android:text="Mark"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/markLabel" android:layout_weight="1"/>
-            <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
-                    android:ems="10"
-                    android:id="@+id/markText" android:layout_weight="1"/>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/alcoRow" android:gravity="center"
-                android:layout_weight="1">
-            <TextView
-                    android:text="Alco %"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/alcoLabel" android:layout_weight="1"/>
-            <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
-                    android:ems="10"
-                    android:id="@+id/alcoText" android:layout_weight="1"/>
-        </LinearLayout>
-        <TextView
-                android:text="Comment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/commentLabel" android:layout_weight="1"/>
-        <EditText
+                android:id="@+id/nameRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:id="@+id/commentText" android:layout_weight="7" android:gravity="top|left"
-        />
-        <Button
-                android:text="save"
+                android:layout_weight="1"
+                android:background="#96E9D6"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/nameLabel"
+                    android:layout_width="68dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Name"
+                    android:textColor="#000000" />
+
+            <EditText
+                    android:id="@+id/nameText"
+                    android:layout_width="274dp"
+                    android:layout_height="49dp"
+                    android:layout_weight="1"
+                    android:background="#d3f3ee"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+            <Space
+                    android:layout_width="1dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/typeRow"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/saveButton" android:layout_weight="1"
-                android:onClick="onSaveClicked"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#96E9D6"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/typeLabel"
+                    android:layout_width="71dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Type"
+                    android:textColor="#000000" />
+
+            <Spinner
+                    android:id="@+id/typeSpinner"
+                    android:layout_width="272dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="#d3f3ee" />
+
+            <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/markRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#96E9D6"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/markLabel"
+                    android:layout_width="71dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Mark"
+                    android:textColor="#000000" />
+
+            <EditText
+                    android:id="@+id/markText"
+                    android:layout_width="275dp"
+                    android:layout_height="47dp"
+                    android:layout_weight="1"
+                    android:background="#d3f3ee"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+            <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/alcoRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#96E9D6"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/alcoLabel"
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Alco %"
+                    android:textColor="#000000" />
+
+            <EditText
+                    android:id="@+id/alcoText"
+                    android:layout_width="268dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="#d3f3ee"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+            <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+        </LinearLayout>
+
+        <TextView
+                android:id="@+id/commentLabel"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Comment:"
+                android:textColor="#000000" />
+
+        <EditText
+                android:id="@+id/commentText"
+                android:layout_width="359dp"
+                android:layout_height="79dp"
+                android:layout_gravity="center"
+                android:layout_weight="7"
+                android:background="#d3f3ee"
+                android:ems="10"
+                android:gravity="top|left"
+                android:inputType="textMultiLine" />
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="0" />
+
+        <TableRow
+                android:id="@+id/RateRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0"
+                android:gravity="center">
+
+            <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Rate"
+                    android:textColor="#000000" />
+
+            <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:max="5"
+                    android:numStars="5" />
+
+            <Space
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content" />
+        </TableRow>
+
+        <Button
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#1E8164"
+                android:onClick="onSaveClicked"
+                android:text="save"
+                android:textColor="#000000" />
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
