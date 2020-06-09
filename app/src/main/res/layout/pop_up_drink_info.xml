@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/pop_bg"
-        tools:context="com.alcodiary.drink.SaveDrinkPopUp" android:layout_gravity="center">
+        tools:context="com.kapibarabanka.alcodiary.drinks.SaveDrinkPopUp" android:layout_gravity="center">
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="0dp"

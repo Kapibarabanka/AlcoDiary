@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/pop_bg"
-        tools:context="com.kapibarabanka.alcodiary.drinks.SaveDrinkPopUp"
+        tools:context="com.kapibarabanka.alcodiary.drinks.SaveDrinkTypePopUp"
         android:layout_gravity="center">
     <LinearLayout
             android:orientation="vertical"
@@ -37,59 +37,35 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/typeRow" android:gravity="center"
+                android:layout_height="wrap_content" android:id="@+id/minAlcoRow" android:gravity="center"
                 android:layout_weight="1">
             <TextView
-                    android:text="Type"
-                    android:layout_width="103dp"
-                    android:layout_height="wrap_content" android:id="@+id/typeLabel" android:layout_weight="1"/>
-            <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/typeSpinner" android:layout_weight="1"/>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/markRow" android:gravity="center"
-                android:layout_weight="1">
-            <TextView
-                    android:text="Mark"
+                    android:text="Min alco %"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/markLabel" android:layout_weight="1"/>
+                    android:layout_height="wrap_content" android:id="@+id/minAlcoLabel" android:layout_weight="1"/>
             <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="10"
-                    android:id="@+id/markText" android:layout_weight="1"/>
+                    android:id="@+id/minAlcoText" android:layout_weight="1"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/alcoRow" android:gravity="center"
+                android:layout_height="wrap_content" android:id="@+id/maxAlcoRow" android:gravity="center"
                 android:layout_weight="1">
             <TextView
-                    android:text="Alco %"
+                    android:text="Max alco %"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/alcoLabel" android:layout_weight="1"/>
+                    android:layout_height="wrap_content" android:id="@+id/maxAlcoLabel" android:layout_weight="1"/>
             <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="10"
-                    android:id="@+id/alcoText" android:layout_weight="1"/>
+                    android:id="@+id/maxAlcoText" android:layout_weight="1"/>
         </LinearLayout>
-        <TextView
-                android:text="Comment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/commentLabel" android:layout_weight="1"/>
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:id="@+id/commentText" android:layout_weight="7" android:gravity="top|left"
-        />
         <Button
                 android:text="save"
                 android:layout_width="match_parent"

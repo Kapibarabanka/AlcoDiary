@@ -1,5 +1,7 @@
-package com.kapibarabanka.alcodiary.drink
+package com.kapibarabanka.alcodiary.drinks
 
+import android.app.Activity
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
@@ -12,8 +14,11 @@ import com.kapibarabanka.alcodiary.allDrinks
 import kotlinx.android.synthetic.main.pop_up_save_drink.*
 
 class SaveDrinkPopUp : AppCompatActivity() {
+    private val addTypeLabel = "Add drink type..."
+    private val newTypeRequest = 1
 
-    var selectedDrinkPosition = -1
+    private var selectedDrinkPosition = -1
+    private var itemsForTypeSpinner = allDrinkTypes.map { it.name }.toMutableList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,17 +32,23 @@ class SaveDrinkPopUp : AppCompatActivity() {
 
         window.setLayout(width, height)
 
-        val drinkTypeAdapter = ArrayAdapter<DrinkType>(this, android.R.layout.simple_spinner_item, allDrinkTypes)
-        drinkTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item)
-        typeSpinner?.adapter = drinkTypeAdapter
+        itemsForTypeSpinner.add(addTypeLabel)
+
+        updateTypeAdapter()
         typeSpinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)  {
-                val selectedType = allDrinkTypes[position]
-                alcoText.setText(selectedType.defaultAlco.toString())
+                if (position >= allDrinkTypes.count()) {
+                    val intent = Intent(applicationContext, SaveDrinkTypePopUp::class.java)
+                    startActivityForResult(intent, newTypeRequest)
+                }
+                else {
+                    val selectedType = allDrinkTypes[position]
+                    alcoText.setText(selectedType.defaultAlco.toString())
+                }
             }
         }
 
@@ -52,6 +63,18 @@ class SaveDrinkPopUp : AppCompatActivity() {
             markText.setText(selectedDrink.mark.toString())
             alcoText.setText(selectedDrink.alco.toString())
             commentText.setText(selectedDrink.comment)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == newTypeRequest && resultCode == Activity.RESULT_OK) {
+            itemsForTypeSpinner = allDrinkTypes.map { it.name }.toMutableList()
+            itemsForTypeSpinner.add(addTypeLabel)
+            updateTypeAdapter()
+            typeSpinner?.setSelection(itemsForTypeSpinner.count() - 2)
+        }
+        else{
+            super.onActivityResult(requestCode, resultCode, data)
         }
     }
 
@@ -73,6 +96,12 @@ class SaveDrinkPopUp : AppCompatActivity() {
             selectedDrink.comment = comment
         }
         finish()
+    }
+
+    private fun updateTypeAdapter() {
+        val drinkTypeAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, itemsForTypeSpinner)
+        drinkTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item)
+        typeSpinner?.adapter = drinkTypeAdapter
     }
 
 }

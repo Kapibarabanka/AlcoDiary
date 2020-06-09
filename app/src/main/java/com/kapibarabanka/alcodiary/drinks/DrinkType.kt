@@ -1,4 +1,4 @@
-package com.kapibarabanka.alcodiary.drink
+package com.kapibarabanka.alcodiary.drinks
 
 class DrinkType(val name: String, val minAlco: Int, val maxAlco: Int) {
     val defaultAlco: Int
