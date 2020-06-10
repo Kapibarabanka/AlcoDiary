@@ -33,11 +33,12 @@
                 android:layout_weight="1"
                 android:background="#96E9D6"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:weightSum="3">
 
             <TextView
                     android:id="@+id/nameLabel"
-                    android:layout_width="68dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -46,16 +47,16 @@
 
             <EditText
                     android:id="@+id/nameText"
-                    android:layout_width="274dp"
-                    android:layout_height="49dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#d3f3ee"
                     android:ems="10"
                     android:inputType="textPersonName" />
 
             <Space
-                    android:layout_width="1dp"
-                    android:layout_height="2dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1" />
         </LinearLayout>
 
@@ -70,7 +71,7 @@
 
             <TextView
                     android:id="@+id/typeLabel"
-                    android:layout_width="71dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -79,13 +80,13 @@
 
             <Spinner
                     android:id="@+id/typeSpinner"
-                    android:layout_width="272dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:layout_weight="1"
                     android:background="#d3f3ee" />
 
             <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
         </LinearLayout>
@@ -101,7 +102,7 @@
 
             <TextView
                     android:id="@+id/markLabel"
-                    android:layout_width="71dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -110,15 +111,15 @@
 
             <EditText
                     android:id="@+id/markText"
-                    android:layout_width="275dp"
-                    android:layout_height="47dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#d3f3ee"
                     android:ems="10"
                     android:inputType="numberDecimal" />
 
             <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
         </LinearLayout>
@@ -134,7 +135,7 @@
 
             <TextView
                     android:id="@+id/alcoLabel"
-                    android:layout_width="69dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -143,15 +144,15 @@
 
             <EditText
                     android:id="@+id/alcoText"
-                    android:layout_width="268dp"
-                    android:layout_height="48dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#d3f3ee"
                     android:ems="10"
                     android:inputType="numberDecimal" />
 
             <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
         </LinearLayout>
@@ -166,21 +167,39 @@
                 android:text="Comment:"
                 android:textColor="#000000" />
 
-        <EditText
-                android:id="@+id/commentText"
-                android:layout_width="359dp"
-                android:layout_height="79dp"
-                android:layout_gravity="center"
+        <LinearLayout
+                android:id="@+id/commentRow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="7"
-                android:background="#d3f3ee"
-                android:ems="10"
-                android:gravity="top|left"
-                android:inputType="textMultiLine" />
+                android:orientation="horizontal">
+
+            <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            <EditText
+                    android:id="@+id/commentText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:background="#d3f3ee"
+                    android:ems="10"
+                    android:gravity="top|left"
+                    android:inputType="textMultiLine" />
+
+            <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+        </LinearLayout>
 
         <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_weight="0" />
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
 
         <TableRow
                 android:id="@+id/RateRow"
@@ -192,7 +211,7 @@
 
             <TextView
                     android:id="@+id/textView3"
-                    android:layout_width="72dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -200,18 +219,24 @@
                     android:textColor="#000000" />
 
             <RatingBar
-                    android:id="@+id/ratingBar"
-                    android:layout_width="200dp"
+                    android:id="@+id/rating"
+                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_weight="1"
-                    android:max="5"
-                    android:numStars="5" />
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:stepSize="0.1" />
 
             <Space
-                    android:layout_width="37dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
         </TableRow>
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
         <Button
                 android:id="@+id/saveButton"
