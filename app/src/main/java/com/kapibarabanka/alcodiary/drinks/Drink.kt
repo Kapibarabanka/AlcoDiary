@@ -1,8 +1,6 @@
 package com.kapibarabanka.alcodiary.drinks
 
-class Drink(var name: String, var type: DrinkType, mark: Int, comment: String = "") {
-    var alco: Int = type.defaultAlco
-    var mark: Int = mark
-    var comment: String = comment
-    var rating : Int = 0    // This value will be updated, when user rates drink
+class Drink(var name: String, var type: DrinkType, ratingInit: Float, var comment: String = "") {
+    var alcoholVolume: Double = type.defaultAlco
+    var rating : Float = ratingInit    // This value will be updated, when user rates drink
 }

@@ -21,7 +21,7 @@ class DrinkInfoPopUp  : AppCompatActivity() {
         val dm = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(dm)
 
-        val width: Int = (dm.widthPixels * 0.7).toInt()
+        val width: Int = (dm.widthPixels * 0.9).toInt()
         val height: Int = (dm.heightPixels * 0.7).toInt()
 
         window.setLayout(width, height)
@@ -50,8 +50,8 @@ class DrinkInfoPopUp  : AppCompatActivity() {
     private fun showDrinkinfo(drink: Drink) {
         nameText.setText(drink.name)
         typeText.setText(drink.type.toString())
-        markText.setText(drink.mark.toString())
-        alcoText.setText(drink.alco.toString())
+        RateDrinkConst.rating = drink.rating.toFloat()
+        alcoText.setText(drink.alcoholVolume.toString())
         commentText.setText(drink.comment)
     }
 }

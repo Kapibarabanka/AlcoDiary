@@ -1,8 +1,8 @@
 package com.kapibarabanka.alcodiary.drinks
 
 class DrinkType(val name: String, val minAlco: Int, val maxAlco: Int) {
-    val defaultAlco: Int
-        get() = (this.minAlco + this.maxAlco) / 2
+    val defaultAlco: Double
+        get() = ((this.minAlco + this.maxAlco) / 2).toDouble()
 
     override fun toString(): String {
         return name

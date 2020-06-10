@@ -41,7 +41,7 @@ class DrinksListAdapter(private val list: List<Drink>, private val onDrinkListen
         fun bind(drink: Drink) {
             dNameView?.text = drink.name
             dTypeView?.text = drink.type.name
-            dMarkView?.text = drink.mark.toString()
+            dMarkView?.text = drink.rating.toString()
         }
 
         override fun onClick(v: View?) {

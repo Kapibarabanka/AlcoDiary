@@ -35,6 +35,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#cdecd8"
                     android:gravity="center_vertical">
 
                 <TextView
@@ -42,7 +43,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="@dimen/nav_header_vertical_spacing"
-                        android:text="Name" />
+                        android:text="Name"
+                        android:textColor="#000000" />
 
                 <TextView
                         android:id="@+id/nameText"
@@ -56,6 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#cdecd8"
                     android:gravity="center_vertical">
 
                 <TextView
@@ -63,31 +66,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="@dimen/nav_header_vertical_spacing"
-                        android:text="Type" />
+                        android:text="Type"
+                        android:textColor="#000000" />
 
                 <TextView
                         android:id="@+id/typeText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@android:color/black" />
-            </TableRow>
-
-            <TableRow
-                    android:id="@+id/markRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical">
-
-                <TextView
-                        android:id="@+id/markLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="@dimen/nav_header_vertical_spacing"
-                        android:text="Mark" />
-
-                <TextView
-                        android:id="@+id/markText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@android:color/black" />
@@ -98,6 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#cdecd8"
                     android:gravity="center_vertical">
 
                 <TextView
@@ -105,7 +89,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="@dimen/nav_header_vertical_spacing"
-                        android:text="Alco %" />
+                        android:text="Alco %"
+                        android:textColor="#000000" />
 
                 <TextView
                         android:id="@+id/alcoText"
@@ -120,14 +105,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#cdecd8"
                 android:gravity="center"
-                android:text="Comment:" />
+                android:text="Comment:"
+                android:textColor="#000000" />
 
         <TextView
                 android:id="@+id/commentText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
+                android:background="#cdecd8"
                 android:textColor="@android:color/black" />
 
         <TableRow
@@ -135,6 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
+                android:background="#cdecd8"
                 android:gravity="center">
 
             <RatingBar
@@ -151,6 +140,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#cdecd8"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -159,16 +149,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#1E8164"
                     android:onClick="onDeleteClicked"
-                    android:text="Delete" />
+                    android:text="Delete"
+                    android:textColor="#000000" />
 
             <Button
                     android:id="@+id/editButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#1E8164"
                     android:onClick="onEditClicked"
-                    android:text="Edit" />
+                    android:text="Edit"
+                    android:textColor="#000000" />
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
