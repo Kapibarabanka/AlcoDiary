@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    fun displayFragment(id: Int) {
+    private fun displayFragment(id: Int) {
         val fragment = when (id) {
             R.id.nav_calendar -> {
                 CalendarFragment()

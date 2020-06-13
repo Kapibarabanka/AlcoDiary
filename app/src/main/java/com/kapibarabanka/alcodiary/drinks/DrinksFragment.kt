@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_drinks.*
 
 const val selectedDrinkPositionExtra = "SELECTED_DRINK_POSITION"
 
-class DrinksFragment : Fragment(), DrinksListAdapter.OnDrinkListener {
+class DrinksFragment : Fragment(), OnDrinkListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +23,7 @@ class DrinksFragment : Fragment(), DrinksListAdapter.OnDrinkListener {
     private val drinksAdapter = DrinksListAdapter(allDrinks, this)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater?.inflate(R.layout.fragment_drinks, null)
+        return inflater.inflate(R.layout.fragment_drinks, null)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
