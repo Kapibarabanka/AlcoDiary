@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/pop_bg"
-        tools:context="com.kapibarabanka.alcodiary.drinks.SaveDrinkPopUp" android:layout_gravity="center">
+        tools:context="com.kapibarabanka.alcodiary.drinks.DrinkInfoPopUp" android:layout_gravity="center">
 
     <LinearLayout
             android:id="@+id/linearLayout"
@@ -100,6 +100,25 @@
             </TableRow>
         </TableLayout>
 
+        <TableRow
+                android:id="@+id/RateRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="#cdecd8"
+                android:gravity="center">
+
+            <RatingBar
+                    android:id="@+id/RateDrinkConst"
+                    style="@android:style/Widget.DeviceDefault.Light.RatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:isIndicator="false"
+                    android:numStars="5"
+                    android:stepSize="0" />
+        </TableRow>
+
         <TextView
                 android:id="@+id/commentLabel"
                 android:layout_width="match_parent"
@@ -117,24 +136,6 @@
                 android:layout_weight="7"
                 android:background="#cdecd8"
                 android:textColor="@android:color/black" />
-
-        <TableRow
-                android:id="@+id/RateRow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:background="#cdecd8"
-                android:gravity="center">
-
-            <RatingBar
-                    android:id="@+id/RateDrinkConst"
-                    style="@android:style/Widget.DeviceDefault.Light.RatingBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:numStars="5"
-                    android:stepSize="0" />
-        </TableRow>
 
         <LinearLayout
                 android:layout_width="match_parent"

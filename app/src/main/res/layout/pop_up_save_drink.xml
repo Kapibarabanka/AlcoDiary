@@ -126,6 +126,35 @@
                     android:layout_weight="1" />
         </LinearLayout>
 
+        <TableRow
+                android:id="@+id/RateRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:weightSum="10">
+
+            <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:text="Rate"
+                    android:textColor="#000000" />
+
+            <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="false"
+                    android:numStars="5"
+                    android:stepSize="1.0" />
+
+        </TableRow>
+
         <TextView
                 android:id="@+id/commentLabel"
                 android:layout_width="wrap_content"
@@ -170,35 +199,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.5" />
-
-        <TableRow
-                android:id="@+id/RateRow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="0"
-                android:gravity="center"
-                android:weightSum="10">
-
-            <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:gravity="center"
-                    android:text="Rate"
-                    android:textColor="#000000" />
-
-            <RatingBar
-                    android:id="@+id/ratingBar"
-                    style="@style/Widget.AppCompat.RatingBar.Indicator"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:isIndicator="true"
-                    android:numStars="5"
-                    android:stepSize="0.1" />
-
-        </TableRow>
 
         <Space
                 android:layout_width="match_parent"
