@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pop_bg"
+        tools:context="com.kapibarabanka.alcodiary.calendar.EventInfoPopUp" android:layout_gravity="center">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/linearLayout"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp">
+
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_weight="4">
+
+            <TableRow android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/nameRow" android:layout_weight="1" android:gravity="center_vertical">
+                <TextView
+                        android:text="Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/nameLabel"
+                        android:paddingRight="@dimen/nav_header_vertical_spacing"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/nameText" android:textColor="@android:color/black"/>
+            </TableRow>
+            <TableRow android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/typeRow" android:layout_weight="1" android:gravity="center_vertical">
+
+                <TextView
+                        android:id="@+id/dateLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/nav_header_vertical_spacing"
+                        android:text="Date" />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/dateText" android:textColor="@android:color/black"/>
+            </TableRow>
+            <TableRow android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/ratingRow" android:layout_weight="1" android:gravity="center_vertical">
+
+                <TextView
+                        android:id="@+id/ratingLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/nav_header_vertical_spacing"
+                        android:text="Rating" />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ratingText" android:textColor="@android:color/black"/>
+            </TableRow>
+        </TableLayout>
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/eventDrinksRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                tools:listitem="@layout/list_item_drink_in_event">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center">
+
+            <Button
+                    android:id="@+id/deleteButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onDeleteClicked"
+                    android:text="Delete" />
+            <Button
+                    android:text="Edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/editButton"
+                    android:onClick="onEditClicked"
+                    android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

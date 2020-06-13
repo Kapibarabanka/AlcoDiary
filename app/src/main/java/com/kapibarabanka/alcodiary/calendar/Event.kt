@@ -5,5 +5,8 @@ import java.time.LocalDate
 
 class Event(var name: String, var date: LocalDate) {
     val drinks = mutableListOf<Pair<Drink, Double>>()
-    var mark: Int = 0
+    constructor(name: String, date: LocalDate, drinks: MutableList<Pair<Drink, Double>>) : this(name, date) {
+       this.drinks.addAll(drinks)
+    }
+    var rating: Int = 0
 }
