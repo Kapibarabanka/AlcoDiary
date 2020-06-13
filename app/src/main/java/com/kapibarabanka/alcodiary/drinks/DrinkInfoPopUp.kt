@@ -9,7 +9,7 @@ import com.kapibarabanka.alcodiary.R
 import com.kapibarabanka.alcodiary.allDrinks
 import kotlinx.android.synthetic.main.pop_up_drink_info.*
 
-class DrinkInfoPopUp  : AppCompatActivity() {
+class DrinkInfoPopUp : AppCompatActivity() {
 
     var selectedDrinkPosition = -1
     lateinit var selectedDrink: Drink
@@ -28,12 +28,12 @@ class DrinkInfoPopUp  : AppCompatActivity() {
 
         selectedDrinkPosition = intent.getIntExtra(selectedDrinkPositionExtra, -1)
         selectedDrink = allDrinks[selectedDrinkPosition]
-        showDrinkinfo(selectedDrink)
+        showDrinkInfo(selectedDrink)
     }
 
     override fun onResume() {
         super.onResume()
-        showDrinkinfo(selectedDrink)
+        showDrinkInfo(selectedDrink)
     }
 
     fun onDeleteClicked(view: View) {
@@ -47,11 +47,11 @@ class DrinkInfoPopUp  : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun showDrinkinfo(drink: Drink) {
-        nameText.setText(drink.name)
-        typeText.setText(drink.type.toString())
-        RateDrinkConst.rating = drink.rating.toFloat()
-        alcoText.setText(drink.alcoholVolume.toString())
-        commentText.setText(drink.comment)
+    private fun showDrinkInfo(drink: Drink) {
+        nameText.text = drink.name
+        typeText.text = drink.type.toString()
+        RateDrinkConst.rating = drink.rating
+        alcoText.text = drink.alcoholVolume.toString()
+        commentText.text = drink.comment
     }
 }

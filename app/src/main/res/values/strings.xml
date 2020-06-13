@@ -10,4 +10,6 @@
     <string name="drink_name">Name</string>
     <string name="drink_type">Type</string>
     <string name="drink_mark">Mark</string>
+
+    <string name="addTypeLabel">"Add drink type..."</string>
 </resources>

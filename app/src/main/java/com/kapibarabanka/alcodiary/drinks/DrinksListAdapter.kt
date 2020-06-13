@@ -8,7 +8,7 @@ import android.widget.TextView
 import com.kapibarabanka.alcodiary.R
 
 class DrinksListAdapter(private val list: List<Drink>, private val onDrinkListener: OnDrinkListener)
-    : RecyclerView.Adapter<DrinksListAdapter.DrinkViewHolder>() {
+    : RecyclerView.Adapter<DrinkViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DrinkViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -21,36 +21,35 @@ class DrinksListAdapter(private val list: List<Drink>, private val onDrinkListen
     }
 
     override fun getItemCount(): Int = list.size
+}
 
-    class DrinkViewHolder(inflater: LayoutInflater, parent: ViewGroup, onDrinkListener: OnDrinkListener) :
-        RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_drink, parent, false)), View.OnClickListener {
-        private var dNameView: TextView? = null
-        private var dTypeView: TextView? = null
-        private var dMarkView: TextView? = null
+class DrinkViewHolder(inflater: LayoutInflater, parent: ViewGroup,
+                      private val onDrinkListener: OnDrinkListener
+) :
+    RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_drink, parent, false)), View.OnClickListener {
+    private var dNameView: TextView? = null
+    private var dTypeView: TextView? = null
+    private var dMarkView: TextView? = null
 
-        private val onDrinkListener = onDrinkListener
+    init {
+        dNameView = itemView.findViewById(R.id.list_drink_name)
+        dTypeView = itemView.findViewById(R.id.list_drink_type)
+        dMarkView = itemView.findViewById(R.id.list_drink_mark)
 
-        init {
-            dNameView = itemView.findViewById(R.id.list_drink_name)
-            dTypeView = itemView.findViewById(R.id.list_drink_type)
-            dMarkView = itemView.findViewById(R.id.list_drink_mark)
-
-            itemView.setOnClickListener(this)
-        }
-
-        fun bind(drink: Drink) {
-            dNameView?.text = drink.name
-            dTypeView?.text = drink.type.name
-            dMarkView?.text = drink.rating.toString()
-        }
-
-        override fun onClick(v: View?) {
-            onDrinkListener.onDrinkClick(adapterPosition)
-        }
-
+        itemView.setOnClickListener(this)
     }
 
-    interface OnDrinkListener {
-        fun onDrinkClick(position: Int)
+    fun bind(drink: Drink) {
+        dNameView?.text = drink.name
+        dTypeView?.text = drink.type.name
+        dMarkView?.text = drink.rating.toString()
     }
+
+    override fun onClick(v: View?) {
+        onDrinkListener.onDrinkClick(adapterPosition)
+    }
+}
+
+interface OnDrinkListener {
+    fun onDrinkClick(position: Int)
 }

@@ -14,7 +14,6 @@ import com.kapibarabanka.alcodiary.allDrinks
 import kotlinx.android.synthetic.main.pop_up_save_drink.*
 
 class SaveDrinkPopUp : AppCompatActivity() {
-    private val addTypeLabel = "Add drink type..."
     private val newTypeRequest = 1
 
     private var selectedDrinkPosition = -1
@@ -32,7 +31,7 @@ class SaveDrinkPopUp : AppCompatActivity() {
 
         window.setLayout(width, height)
 
-        itemsForTypeSpinner.add(addTypeLabel)
+        itemsForTypeSpinner.add(getString(R.string.addTypeLabel))
 
         updateTypeAdapter()
         typeSpinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -69,7 +68,7 @@ class SaveDrinkPopUp : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == newTypeRequest && resultCode == Activity.RESULT_OK) {
             itemsForTypeSpinner = allDrinkTypes.map { it.name }.toMutableList()
-            itemsForTypeSpinner.add(addTypeLabel)
+            itemsForTypeSpinner.add(getString(R.string.addTypeLabel))
             updateTypeAdapter()
             typeSpinner?.setSelection(itemsForTypeSpinner.count() - 2)
         }
