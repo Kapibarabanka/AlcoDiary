@@ -13,5 +13,5 @@
     <string name="drink_amount">Amount</string>
 
     <string name="addTypeLabel">"Add drink type…"</string>
-
+    <string name="addDrinkLabel">"Add drink…"</string>
 </resources>

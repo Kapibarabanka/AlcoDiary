@@ -22,7 +22,7 @@ class EventInfoPopUp : AppCompatActivity(){
         val dm = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(dm)
 
-        val width: Int = (dm.widthPixels * 0.7).toInt()
+        val width: Int = (dm.widthPixels * 0.9).toInt()
         val height: Int = (dm.heightPixels * 0.7).toInt()
 
         window.setLayout(width, height)
@@ -43,9 +43,9 @@ class EventInfoPopUp : AppCompatActivity(){
     }
 
     fun onEditClicked(view: View) {
-//        val intent = Intent(applicationContext, SaveEventPopUp::class.java)
-//        intent.putExtra(selectedEventPositionExtra, selectedEventPosition)
-//        startActivity(intent)
+        val intent = Intent(applicationContext, SaveEventPopUp::class.java)
+        intent.putExtra(selectedEventPositionExtra, selectedEventPosition)
+        startActivity(intent)
     }
 
     private fun showEventInfo(event: Event) {

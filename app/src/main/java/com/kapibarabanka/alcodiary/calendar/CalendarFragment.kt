@@ -12,6 +12,7 @@ import com.kapibarabanka.alcodiary.allEvents
 import kotlinx.android.synthetic.main.fragment_calendar.*
 
 const val selectedEventPositionExtra = "SELECTED_EVENT_POSITION"
+const val addDrinkRequest = 2
 
 class CalendarFragment : Fragment(), OnEventListener {
 
@@ -50,8 +51,8 @@ class CalendarFragment : Fragment(), OnEventListener {
     }
 
     fun onFabAddDrinkClicked (view: View) {
-//        val intent = Intent(activity?.applicationContext, SaveEventPopUp::class.java)
-//        startActivity(intent)
+        val intent = Intent(activity?.applicationContext, SaveEventPopUp::class.java)
+        startActivity(intent)
     }
 
     companion object {
