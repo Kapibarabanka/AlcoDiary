@@ -14,8 +14,6 @@ import com.kapibarabanka.alcodiary.allDrinks
 import kotlinx.android.synthetic.main.pop_up_save_drink.*
 
 class SaveDrinkPopUp : AppCompatActivity() {
-    private val newTypeRequest = 1
-
     private var selectedDrinkPosition = -1
     private var itemsForTypeSpinner = allDrinkTypes.map { it.name }.toMutableList()
 

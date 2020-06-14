@@ -12,6 +12,7 @@ import com.kapibarabanka.alcodiary.allDrinks
 import kotlinx.android.synthetic.main.fragment_drinks.*
 
 const val selectedDrinkPositionExtra = "SELECTED_DRINK_POSITION"
+const val newTypeRequest = 1
 
 class DrinksFragment : Fragment(), OnDrinkListener {
 
@@ -49,7 +50,7 @@ class DrinksFragment : Fragment(), OnDrinkListener {
         drinksAdapter.notifyDataSetChanged()
     }
 
-    fun onFabAddDrinkClicked (view: View) {
+    private fun onFabAddDrinkClicked (view: View) {
         val intent = Intent(activity?.applicationContext, SaveDrinkPopUp::class.java)
         startActivity(intent)
     }
