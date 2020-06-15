@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/pop_bg"
-        tools:context="com.kapibarabanka.alcodiary.drinks.SaveDrinkPopUp"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:background="#8d0cb7"
+        tools:context="com.kapibarabanka.alcodiary.drinks.SaveDrinkPopUp">
 
     <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="#cdecd8"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="#eaeaea"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -31,31 +28,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#cdecd8"
+                android:background="#eaeaea"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="11">
+                android:weightSum="10">
 
             <TextView
                     android:id="@+id/nameLabel"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="5"
+                    android:layout_weight="3"
                     android:gravity="center"
                     android:text="Name"
                     android:textColor="#000000" />
 
             <EditText
                     android:id="@+id/nameText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:background="#d3f3ee"
+                    android:layout_weight="6"
+                    android:background="#ffffff"
                     android:ems="10"
                     android:inputType="textPersonName" />
 
             <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
         </LinearLayout>
@@ -65,26 +62,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#cdecd8"
+                android:background="#eaeaea"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="11">
+                android:weightSum="10">
 
             <TextView
                     android:id="@+id/typeLabel"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="5"
+                    android:layout_weight="3"
                     android:gravity="center"
                     android:text="Type"
                     android:textColor="#000000" />
 
             <Spinner
                     android:id="@+id/typeSpinner"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="23dp"
-                    android:layout_weight="5"
-                    android:background="#d3f3ee" />
+                    android:layout_weight="6"
+                    android:background="#ffffff" />
 
             <Space
                     android:layout_width="wrap_content"
@@ -97,31 +94,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#cdecd8"
+                android:background="#eaeaea"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="11">
+                android:weightSum="10">
 
             <TextView
                     android:id="@+id/alcoLabel"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="5"
+                    android:layout_weight="3"
                     android:gravity="center"
                     android:text="Al. Volume, %"
                     android:textColor="#000000" />
 
             <EditText
                     android:id="@+id/alcoText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:background="#d3f3ee"
+                    android:layout_weight="6"
+                    android:background="#ffffff"
                     android:ems="10"
                     android:inputType="numberDecimal" />
 
             <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
         </LinearLayout>
@@ -171,26 +168,26 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
                 android:orientation="horizontal"
-                android:weightSum="10">
+                android:weightSum="14">
 
             <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
             <EditText
                     android:id="@+id/commentText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_weight="8"
-                    android:background="#d3f3ee"
+                    android:layout_weight="12"
+                    android:background="#ffffff"
                     android:ems="10"
                     android:gravity="top|left"
                     android:inputType="textMultiLine" />
 
             <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
         </LinearLayout>
@@ -210,7 +207,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#1E8164"
+                android:backgroundTint="#8d0cb7"
                 android:onClick="onSaveClicked"
                 android:text="save"
                 android:textColor="#000000" />

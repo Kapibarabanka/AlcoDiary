@@ -5,17 +5,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="@android:drawable/title_bar"
+        android:background="#8d0cb7"
         tools:context="com.kapibarabanka.alcodiary.calendar.SaveEventPopUp">
 
     <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
             android:background="#eaeaea"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -127,10 +127,11 @@
 
         <Button
                 android:id="@+id/saveButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
+                android:backgroundTint="#8d0cb7"
                 android:gravity="center_horizontal|center_vertical"
                 android:onClick="onSaveClicked"
                 android:text="Save" />
