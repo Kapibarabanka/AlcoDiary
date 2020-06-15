@@ -1,5 +1,6 @@
 package com.kapibarabanka.alcodiary.calendar
 
+import android.support.v7.widget.AppCompatImageButton
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -19,7 +20,7 @@ class EditDrinkInEventListAdapter(private val list: MutableList<Pair<Drink, Doub
     override fun onBindViewHolder(holder: EditDrinkInEventViewHolder, position: Int) {
         val pair = list[position]
         holder.bind(pair)
-        val deleteButton: Button = holder.itemView.findViewById(R.id.deleteButton)
+        val deleteButton: AppCompatImageButton = holder.itemView.findViewById(R.id.deleteButton)
         deleteButton.setOnClickListener {
             list.removeAt(position)
             notifyItemRemoved(position)

@@ -29,7 +29,7 @@ class CalendarFragment : Fragment(), OnEventListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        allEvents.sortBy { it.date }
+        allEvents.sortByDescending { it.date }
         eventsRecyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = eventsAdapter
@@ -48,7 +48,7 @@ class CalendarFragment : Fragment(), OnEventListener {
     override fun onResume() {
         super.onResume()
         fabAddEvent.show()
-        allEvents.sortBy { it.date }
+        allEvents.sortByDescending { it.date }
         eventsAdapter.notifyDataSetChanged()
     }
 

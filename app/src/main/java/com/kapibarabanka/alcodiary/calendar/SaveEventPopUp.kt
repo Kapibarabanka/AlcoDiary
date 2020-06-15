@@ -61,14 +61,14 @@ class SaveEventPopUp : AppCompatActivity(){
         val rating = ratingText.text.toString().toInt()
         if (selectedEventPosition == -1) {
             allEvents.add(Event(name, date, eventDrinks))
-            allEvents.sortBy { it.date }
+            allEvents.sortByDescending { it.date }
         }
         else {
             val selectedEvent = allEvents[selectedEventPosition]
             selectedEvent.name = name
             selectedEvent.date = date
             selectedEvent.rating = rating
-            allEvents.sortBy { it.date }
+            allEvents.sortByDescending { it.date }
         }
         finish()
     }
