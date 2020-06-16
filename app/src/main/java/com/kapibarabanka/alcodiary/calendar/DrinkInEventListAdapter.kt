@@ -24,6 +24,28 @@ class DrinkInEventListAdapter(private val list: List<Pair<Drink, Double>>)
 }
 
 class DrinkInEventViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
+    RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_drink_in_event, parent, false)){
+
+    private var typeView: TextView? = null
+    private var nameView: TextView? = null
+    private var amountView: TextView? = null
+
+    init {
+        typeView = itemView.findViewById(R.id.list_drink_type)
+        nameView = itemView.findViewById(R.id.list_drink_name)
+        amountView = itemView.findViewById(R.id.list_drink_amount)
+    }
+
+    fun bind(pair: Pair<Drink, Double>) {
+        val drink = pair.first
+        val amount = pair.second
+        typeView?.text = drink.type.toString()
+        nameView?.text = drink.name
+        amountView?.text = amount.toString()
+    }
+}
+
+class DrinkInEventPreViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_in_event_preview, parent, false)){
 
     private var typeView: TextView? = null

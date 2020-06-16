@@ -30,7 +30,7 @@ class SaveEventPopUp : AppCompatActivity(){
         windowManager.defaultDisplay.getMetrics(dm)
 
         val width: Int = (dm.widthPixels * 0.9).toInt()
-        val height: Int = (dm.heightPixels * 0.7).toInt()
+        val height: Int = (dm.heightPixels * 0.8).toInt()
 
         window.setLayout(width, height)
 

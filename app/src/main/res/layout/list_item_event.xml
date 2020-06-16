@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:layout_gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="16dp">
@@ -11,18 +11,36 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#F9EFFC"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="7">
 
-        <TextView
-                android:id="@+id/list_event_number"
+        <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:background="#ECCBF7"
-                android:gravity="center_horizontal|center_vertical"
-                android:padding="5sp"
-                android:text="Number"
-                android:textSize="36sp" />
+                android:orientation="vertical"
+                android:weightSum="4">
+
+            <TextView
+                    android:id="@+id/list_event_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="5sp"
+                    android:text="Number"
+                    android:textSize="36sp" />
+
+            <TextView
+                    android:id="@+id/list_event_month"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="month"
+                    android:textSize="24sp" />
+        </LinearLayout>
 
         <LinearLayout
                 android:layout_width="0dp"
@@ -39,15 +57,6 @@
                     tools:listitem="@layout/list_item_in_event_preview">
 
             </android.support.v7.widget.RecyclerView>
-
-            <TextView
-                    android:id="@+id/dotsText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|top"
-                    android:gravity="center_horizontal|top"
-                    android:text="⋅⋅⋅"
-                    android:textSize="24sp" />
 
         </LinearLayout>
 

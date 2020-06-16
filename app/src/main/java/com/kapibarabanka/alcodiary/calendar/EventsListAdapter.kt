@@ -1,5 +1,6 @@
 package com.kapibarabanka.alcodiary.calendar
 
+import android.annotation.SuppressLint
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -30,18 +31,19 @@ class EventViewHolder(inflater: LayoutInflater, parent: ViewGroup,
     RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_event, parent, false)), View.OnClickListener {
 
     private var numberView: TextView? = null
+    private var monthView: TextView? = null
     private var drinksRecyclerView: RecyclerView? = null
-    private var dotsView : TextView? = null
 
     init {
         numberView = itemView.findViewById(R.id.list_event_number)
+        monthView = itemView.findViewById(R.id.list_event_month)
         drinksRecyclerView = itemView.findViewById(R.id.eventDrinksRecyclerView)
-        dotsView = itemView.findViewById(R.id.dotsText)
         itemView.setOnClickListener(this)
     }
 
     fun bind(event: Event) {
-        numberView?.text = event.date.month.toString() + " " + event.date.dayOfMonth.toString()
+        numberView?.text = event.date.dayOfMonth.toString()
+        monthView?.text = event.date.month.toString()
         val drinks = getDrinks(event)
         drinksRecyclerView?.apply {
             layoutManager = LinearLayoutManager(itemView.context)
@@ -55,10 +57,8 @@ class EventViewHolder(inflater: LayoutInflater, parent: ViewGroup,
 
     private fun getDrinks(event: Event): MutableList<Pair<Drink, Double>> {
         if (event.drinks.count() <= 2) {
-            dotsView?.visibility = View.GONE
             return event.drinks
         }
-        dotsView?.visibility = View.VISIBLE
         return event.drinks.slice(0..1).toMutableList()
     }
 }
