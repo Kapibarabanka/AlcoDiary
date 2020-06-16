@@ -22,8 +22,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:adjustViewBounds="false"
                 android:padding="10sp"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:srcCompat="@drawable/beer_dark" />
 
         <LinearLayout
                 android:id="@+id/infoLayout"
@@ -42,7 +43,8 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="10sp"
                     android:text="@string/drink_name"
-                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
 
             <TextView
@@ -53,7 +55,8 @@
                     android:layout_weight="2"
                     android:gravity="center_vertical"
                     android:paddingLeft="10sp"
-                    android:text="@string/drink_type" />
+                    android:text="@string/drink_type"
+                    android:textSize="18sp" />
 
         </LinearLayout>
 

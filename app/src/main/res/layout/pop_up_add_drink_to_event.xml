@@ -18,6 +18,7 @@
             android:layout_marginBottom="4dp"
             android:background="#eaeaea"
             android:orientation="vertical"
+            android:weightSum="7"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,19 +27,23 @@
         <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="16">
+                android:layout_weight="6"
+                android:weightSum="2">
 
             <TableRow
                     android:id="@+id/drinkRow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:weightSum="10">
 
                 <TextView
                         android:id="@+id/drinkLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:paddingLeft="18sp"
                         android:paddingRight="@dimen/nav_header_vertical_spacing"
                         android:text="Drink" />
 
@@ -46,7 +51,7 @@
                         android:id="@+id/drinkSpinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="5" />
+                        android:layout_weight="7" />
 
             </TableRow>
 
@@ -55,12 +60,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:weightSum="10">
 
                 <TextView
                         android:id="@+id/amountLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:paddingLeft="18sp"
                         android:paddingRight="@dimen/nav_header_vertical_spacing"
                         android:text="@string/drink_amount" />
 
@@ -68,7 +76,7 @@
                         android:id="@+id/amountText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="5"
+                        android:layout_weight="7"
                         android:ems="10"
                         android:inputType="number" />
 
