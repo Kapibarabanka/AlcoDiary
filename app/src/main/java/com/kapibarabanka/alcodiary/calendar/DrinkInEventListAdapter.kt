@@ -24,7 +24,7 @@ class DrinkInEventListAdapter(private val list: List<Pair<Drink, Double>>)
 }
 
 class DrinkInEventViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_drink_in_event, parent, false)){
+    RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_in_event_preview, parent, false)){
 
     private var typeView: TextView? = null
     private var nameView: TextView? = null
