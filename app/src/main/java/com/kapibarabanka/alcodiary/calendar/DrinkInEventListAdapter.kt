@@ -7,12 +7,12 @@ import android.widget.TextView
 import com.kapibarabanka.alcodiary.R
 import com.kapibarabanka.alcodiary.drinks.Drink
 
-class DrinkInEventListAdapter(private val list: List<Pair<Drink, Double>>)
+class DrinkInEventListAdapter(private val holderLayoutId: Int, private val list: List<Pair<Drink, Double>>)
     : RecyclerView.Adapter<DrinkInEventViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DrinkInEventViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return DrinkInEventViewHolder(inflater, parent)
+        return DrinkInEventViewHolder(holderLayoutId, inflater, parent)
     }
 
     override fun onBindViewHolder(holder: DrinkInEventViewHolder, position: Int) {
@@ -23,8 +23,8 @@ class DrinkInEventListAdapter(private val list: List<Pair<Drink, Double>>)
     override fun getItemCount(): Int = list.size
 }
 
-class DrinkInEventViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_drink_in_event, parent, false)){
+class DrinkInEventViewHolder(holderLayoutId: Int, inflater: LayoutInflater, parent: ViewGroup) :
+    RecyclerView.ViewHolder(inflater.inflate(holderLayoutId, parent, false)){
 
     private var typeView: TextView? = null
     private var nameView: TextView? = null
@@ -46,7 +46,7 @@ class DrinkInEventViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
 }
 
 class DrinkInEventPreViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_in_event_preview, parent, false)){
+    RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_preview_drink_in_event, parent, false)){
 
     private var typeView: TextView? = null
     private var nameView: TextView? = null

@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     tools:itemCount="2"
-                    tools:listitem="@layout/list_item_in_event_preview">
+                    tools:listitem="@layout/list_item_preview_drink_in_event">
 
             </android.support.v7.widget.RecyclerView>
 

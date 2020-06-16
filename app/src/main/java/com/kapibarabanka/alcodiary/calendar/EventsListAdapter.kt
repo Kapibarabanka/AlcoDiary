@@ -47,7 +47,7 @@ class EventViewHolder(inflater: LayoutInflater, parent: ViewGroup,
         val drinks = getDrinks(event)
         drinksRecyclerView?.apply {
             layoutManager = LinearLayoutManager(itemView.context)
-            adapter = DrinkInEventListAdapter(drinks)
+            adapter = DrinkInEventListAdapter(R.layout.list_item_preview_drink_in_event, drinks)
         }
     }
 

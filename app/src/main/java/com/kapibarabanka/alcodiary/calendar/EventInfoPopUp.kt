@@ -54,7 +54,7 @@ class EventInfoPopUp : AppCompatActivity(){
         ratingText.text = event.rating.toString()
         eventDrinksRecyclerView?.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = DrinkInEventListAdapter(event.drinks)
+            adapter = DrinkInEventListAdapter(R.layout.list_item_drink_in_event, event.drinks)
         }
     }
 }
