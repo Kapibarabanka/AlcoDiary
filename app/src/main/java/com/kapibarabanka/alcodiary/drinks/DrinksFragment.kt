@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.allDrinks
+import com.kapibarabanka.alcodiary.data.allDrinks
 import kotlinx.android.synthetic.main.fragment_drinks.*
 
 const val selectedDrinkPositionExtra = "SELECTED_DRINK_POSITION"

@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.allEvents
+import com.kapibarabanka.alcodiary.data.allEvents
 import kotlinx.android.synthetic.main.fragment_calendar.*
 
 const val selectedEventPositionExtra = "SELECTED_EVENT_POSITION"

@@ -8,7 +8,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.util.DisplayMetrics
 import android.view.View
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.allEvents
+import com.kapibarabanka.alcodiary.data.allEvents
 import com.kapibarabanka.alcodiary.drinks.Drink
 import kotlinx.android.synthetic.main.pop_up_save_event.*
 import java.time.LocalDate

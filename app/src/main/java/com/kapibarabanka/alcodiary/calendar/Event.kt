@@ -1,6 +1,6 @@
 package com.kapibarabanka.alcodiary.calendar
 
-import com.kapibarabanka.alcodiary.getNewEventId
+import com.kapibarabanka.alcodiary.data.getNewEventId
 import java.time.LocalDate
 
 class Event(var name: String, var date: LocalDate) {

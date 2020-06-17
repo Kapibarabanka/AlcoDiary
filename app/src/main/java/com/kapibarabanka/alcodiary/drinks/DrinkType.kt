@@ -1,9 +1,9 @@
 package com.kapibarabanka.alcodiary.drinks
 
-import com.kapibarabanka.alcodiary.getNewDrinkTypeId
+import com.kapibarabanka.alcodiary.data.getNewDrinkTypeId
 import java.io.Serializable
 
-class DrinkType(val name: String, val minAlco: Float, val maxAlco: Float) : Serializable {
+class DrinkType(var name: String, var minAlco: Float, var maxAlco: Float) : Serializable {
     var id = getNewDrinkTypeId()
     constructor(idFromDB: Int, name: String, minAlco: Float, maxAlco:Float)
             : this(name, minAlco, maxAlco) {id = idFromDB}

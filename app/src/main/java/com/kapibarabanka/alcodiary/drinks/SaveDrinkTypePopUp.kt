@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
 import android.view.View
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.allDrinkTypes
+import com.kapibarabanka.alcodiary.data.allDrinkTypes
 import kotlinx.android.synthetic.main.pop_up_save_drink_type.*
 
 class SaveDrinkTypePopUp : AppCompatActivity() {

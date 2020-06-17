@@ -9,8 +9,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.allDrinkTypes
-import com.kapibarabanka.alcodiary.allDrinks
+import com.kapibarabanka.alcodiary.data.allDrinkTypes
+import com.kapibarabanka.alcodiary.data.allDrinks
 import kotlinx.android.synthetic.main.pop_up_save_drink.*
 
 class SaveDrinkPopUp : AppCompatActivity() {
