@@ -19,7 +19,7 @@ const val addedAmountExtra = "ADDED_AMOUNT"
 class SaveEventPopUp : AppCompatActivity(){
     var selectedEventPosition = -1
 
-    lateinit var eventDrinks: MutableList<Pair<Drink, Double>>
+    lateinit var eventDrinks: MutableList<DrinkInEvent>
     lateinit var drinkAdapter: EditDrinkInEventListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,8 +81,8 @@ class SaveEventPopUp : AppCompatActivity(){
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == addDrinkRequest && resultCode == Activity.RESULT_OK) {
             val newDrink: Drink = data?.getSerializableExtra(addedDrinkExtra) as Drink
-            val newAmount = data.getDoubleExtra(addedAmountExtra, 0.0)
-            eventDrinks.add(newDrink to newAmount)
+            val newAmount = data.getFloatExtra(addedAmountExtra, 0.0f)
+            eventDrinks.add(DrinkInEvent(newDrink, newAmount))
             drinkAdapter.notifyDataSetChanged()
         }
         else{

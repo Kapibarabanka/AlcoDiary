@@ -1,6 +1,5 @@
 package com.kapibarabanka.alcodiary.calendar
 
-import android.annotation.SuppressLint
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -55,7 +54,7 @@ class EventViewHolder(inflater: LayoutInflater, parent: ViewGroup,
         onEventListener.onEventClick(adapterPosition)
     }
 
-    private fun getDrinks(event: Event): MutableList<Pair<Drink, Double>> {
+    private fun getDrinks(event: Event): MutableList<DrinkInEvent> {
         if (event.drinks.count() <= 2) {
             return event.drinks
         }

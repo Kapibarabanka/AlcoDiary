@@ -5,9 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.drinks.Drink
 
-class DrinkInEventListAdapter(private val holderLayoutId: Int, private val list: List<Pair<Drink, Double>>)
+class DrinkInEventListAdapter(private val holderLayoutId: Int, private val list: List<DrinkInEvent>)
     : RecyclerView.Adapter<DrinkInEventViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DrinkInEventViewHolder {
@@ -16,8 +15,8 @@ class DrinkInEventListAdapter(private val holderLayoutId: Int, private val list:
     }
 
     override fun onBindViewHolder(holder: DrinkInEventViewHolder, position: Int) {
-        val pair = list[position]
-        holder.bind(pair)
+        val item = list[position]
+        holder.bind(item)
     }
 
     override fun getItemCount(): Int = list.size
@@ -36,33 +35,9 @@ class DrinkInEventViewHolder(holderLayoutId: Int, inflater: LayoutInflater, pare
         amountView = itemView.findViewById(R.id.list_drink_amount)
     }
 
-    fun bind(pair: Pair<Drink, Double>) {
-        val drink = pair.first
-        val amount = pair.second
-        typeView?.text = drink.type.toString()
-        nameView?.text = drink.name
-        amountView?.text = amount.toString()
-    }
-}
-
-class DrinkInEventPreViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_preview_drink_in_event, parent, false)){
-
-    private var typeView: TextView? = null
-    private var nameView: TextView? = null
-    private var amountView: TextView? = null
-
-    init {
-        typeView = itemView.findViewById(R.id.list_drink_type)
-        nameView = itemView.findViewById(R.id.list_drink_name)
-        amountView = itemView.findViewById(R.id.list_drink_amount)
-    }
-
-    fun bind(pair: Pair<Drink, Double>) {
-        val drink = pair.first
-        val amount = pair.second
-        typeView?.text = drink.type.toString()
-        nameView?.text = drink.name
-        amountView?.text = amount.toString()
+    fun bind(item: DrinkInEvent) {
+        typeView?.text = item.drink.type.toString()
+        nameView?.text = item.drink.name
+        amountView?.text = item.amount.toString()
     }
 }

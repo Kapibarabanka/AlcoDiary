@@ -23,8 +23,8 @@ class AddDrinkToEventPopUp : AppCompatActivity(){
         val dm = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(dm)
 
-        val width: Int = (dm.widthPixels * 0.9).toInt()
-        val height: Int = (dm.heightPixels * 0.8).toInt()
+        val width: Int = (dm.widthPixels * 0.7).toInt()
+        val height: Int = (dm.heightPixels * 0.4).toInt()
 
         window.setLayout(width, height)
 
@@ -51,7 +51,7 @@ class AddDrinkToEventPopUp : AppCompatActivity(){
 
     fun onAddClicked(view: View) {
         val drink = allDrinks[drinkSpinner.selectedItemPosition]
-        val amount = amountText.text.toString().toDouble()
+        val amount = amountText.text.toString().toFloat()
         val intent = Intent()
         intent.putExtra(addedDrinkExtra, drink)
         intent.putExtra(addedAmountExtra, amount)

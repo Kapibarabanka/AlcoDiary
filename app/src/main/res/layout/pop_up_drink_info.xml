@@ -34,20 +34,24 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#eaeaea"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:weightSum="10">
 
                 <TextView
                         android:id="@+id/nameLabel"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:paddingLeft="18sp"
                         android:paddingRight="@dimen/nav_header_vertical_spacing"
                         android:text="Name"
                         android:textColor="#000000" />
 
                 <TextView
                         android:id="@+id/nameText"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="7"
                         android:textColor="@android:color/black" />
             </TableRow>
 
@@ -57,13 +61,15 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#eaeaea"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:weightSum="10">
 
                 <TextView
                         android:id="@+id/typeLabel"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:paddingRight="@dimen/nav_header_vertical_spacing"
+                        android:layout_weight="3"
+                        android:paddingLeft="18sp"
                         android:text="Type"
                         android:textColor="#000000" />
 
@@ -71,6 +77,7 @@
                         android:id="@+id/typeText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="7"
                         android:textColor="@android:color/black" />
             </TableRow>
 
@@ -80,20 +87,23 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#eaeaea"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:weightSum="10">
 
                 <TextView
                         android:id="@+id/alcoLabel"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:paddingRight="@dimen/nav_header_vertical_spacing"
+                        android:layout_weight="3"
+                        android:paddingLeft="18sp"
                         android:text="Alco %"
                         android:textColor="#000000" />
 
                 <TextView
                         android:id="@+id/alcoText"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="7"
                         android:textColor="@android:color/black" />
             </TableRow>
         </TableLayout>
@@ -133,6 +143,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
                 android:background="#eaeaea"
+                android:paddingLeft="15sp"
+                android:paddingRight="15sp"
                 android:textColor="@android:color/black" />
 
         <LinearLayout
