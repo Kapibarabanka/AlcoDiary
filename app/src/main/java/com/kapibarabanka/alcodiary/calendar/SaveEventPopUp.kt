@@ -58,7 +58,7 @@ class SaveEventPopUp : AppCompatActivity(){
     fun onSaveClicked(view: View) {
         val name = nameText.text.toString()
         val date = LocalDate.parse(dateText.text)
-        val rating = ratingText.text.toString().toInt()
+        val rating = ratingText.text.toString().toFloat()
         if (selectedEventPosition == -1) {
             allEvents.add(Event(name, date, eventDrinks))
             allEvents.sortByDescending { it.date }

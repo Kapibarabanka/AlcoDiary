@@ -31,8 +31,7 @@ const val DRINK_TYPES_URL = "$BASE_URL/drinkTypes"
 const val DRINKS_URL = "$BASE_URL/drinks"
 const val EVENTS_URL = "$BASE_URL/events"
 const val DRINKS_IN_EVENTS_URL = "$BASE_URL/drinksInEvents"
-const val GET_TAG = "TEST_GET"
-const val EVENT_TAG = "TEST_EVENTS"
+const val BASE_TAG = "AlcoDiary"
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -51,42 +50,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         displayFragment(-1)
 
-        GlobalScope.launch(Dispatchers.IO) {
-            val client = HttpClient(Android) {
-                install(JsonFeature) {
-                    serializer = GsonSerializer()
-                }
-            }
+        val dbAdapter = LocalDBAdapter(this)
+        dbAdapter.open()
 
-            val drinkTypesFromDB: List<DrinkType> = client.get(DRINK_TYPES_URL)
-            for (type in drinkTypesFromDB) {
-                Log.i(GET_TAG, "DrinkType(${type.id}, ${type.name})")
-            }
-            allDrinkTypes.addAll(drinkTypesFromDB)
+        allDrinkTypes.addAll(dbAdapter.getAllTypes())
+        allDrinks.addAll(dbAdapter.getAllDrinks())
+        allEvents.addAll(dbAdapter.getAllEventsWithDrinks())
 
-            val drinksFromDB: List<DrinkData> = client.get(DRINKS_URL)
-            for (drink in drinksFromDB) {
-                Log.i(GET_TAG, "DrinkData(${drink.id}, ${drink.name})")
-            }
-            allDrinks.addAll(drinksFromDB.map { it.getObject() })
-
-            val eventsFromDB: List<EventData> = client.get(EVENTS_URL)
-            for (event in eventsFromDB) {
-                Log.i(GET_TAG, "EventData(${event.id}, ${event.name})")
-            }
-            allEvents.addAll(eventsFromDB.map { it.getObject() })
-
-            val drinksInEventsFromDB: List<DrinkInEventData> = client.get(DRINKS_IN_EVENTS_URL)
-            drinksInEventsFromDB.forEach { it.getAndAddObject() }
-
-            for (event in allEvents) {
-                for (drink in event.drinks) {
-                    Log.i(EVENT_TAG, "${event.name}: ${drink.drink.name} - ${drink.amount}")
-                }
-            }
-
-            client.close()
-        }
+        dbAdapter.close()
+//        GlobalScope.launch(Dispatchers.IO) {
+//            loadAllFromGlobalBase()
+//        }
     }
 
     override fun onBackPressed() {
@@ -140,5 +114,42 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private suspend fun loadAllFromGlobalBase() {
+        val client = HttpClient(Android) {
+            install(JsonFeature) {
+                serializer = GsonSerializer()
+            }
+        }
+
+        val drinkTypesFromDB: List<DrinkType> = client.get(DRINK_TYPES_URL)
+        for (type in drinkTypesFromDB) {
+            Log.i(BASE_TAG, "DrinkType(${type.id}, ${type.name})")
+        }
+        allDrinkTypes.addAll(drinkTypesFromDB)
+
+        val drinksFromDB: List<DrinkData> = client.get(DRINKS_URL)
+        for (drink in drinksFromDB) {
+            Log.i(BASE_TAG, "DrinkData(${drink.id}, ${drink.name})")
+        }
+        allDrinks.addAll(drinksFromDB.map { it.getObject() })
+
+        val eventsFromDB: List<EventData> = client.get(EVENTS_URL)
+        for (event in eventsFromDB) {
+            Log.i(BASE_TAG, "EventData(${event.id}, ${event.name})")
+        }
+        allEvents.addAll(eventsFromDB.map { it.getObject() })
+
+        val drinksInEventsFromDB: List<DrinkInEventData> = client.get(DRINKS_IN_EVENTS_URL)
+        drinksInEventsFromDB.forEach { it.getAndAddObject() }
+
+        for (event in allEvents) {
+            for (drink in event.drinks) {
+                Log.i(BASE_TAG, "${event.name}: ${drink.drink.name} - ${drink.amount}")
+            }
+        }
+
+        client.close()
     }
 }
