@@ -23,7 +23,7 @@ class EventInfoPopUp : AppCompatActivity(){
         windowManager.defaultDisplay.getMetrics(dm)
 
         val width: Int = (dm.widthPixels * 0.9).toInt()
-        val height: Int = (dm.heightPixels * 0.7).toInt()
+        val height: Int = (dm.heightPixels * 0.8).toInt()
 
         window.setLayout(width, height)
 
@@ -54,7 +54,7 @@ class EventInfoPopUp : AppCompatActivity(){
         ratingText.text = event.rating.toString()
         eventDrinksRecyclerView?.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = DrinkInEventListAdapter(event.drinks)
+            adapter = DrinkInEventListAdapter(R.layout.list_item_drink_in_event, event.drinks)
         }
     }
 }
