@@ -27,9 +27,9 @@ class SaveDrinkTypePopUp : AppCompatActivity() {
 
     fun onSaveClicked(view: View) {
         val name = nameText.text.toString()
-        val minAlco = minAlcoText.text.toString().toInt()
-        val maxAlco = maxAlcoText.text.toString().toInt()
-        allDrinkTypes.add(DrinkType(name, minAlco, maxAlco))
+        val minAlco = minAlcoText.text.toString().toFloat()
+        val maxAlco = maxAlcoText.text.toString().toFloat()
+        allDrinkTypes.add(DrinkType(0, name, minAlco, maxAlco))
         setResult(Activity.RESULT_OK, Intent())
         finish()
     }

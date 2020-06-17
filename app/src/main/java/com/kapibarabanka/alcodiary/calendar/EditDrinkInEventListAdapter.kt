@@ -4,12 +4,10 @@ import android.support.v7.widget.AppCompatImageButton
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.drinks.Drink
 
-class EditDrinkInEventListAdapter(private val list: MutableList<Pair<Drink, Double>>)
+class EditDrinkInEventListAdapter(private val list: MutableList<DrinkInEvent>)
     : RecyclerView.Adapter<EditDrinkInEventViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EditDrinkInEventViewHolder {
@@ -18,8 +16,8 @@ class EditDrinkInEventListAdapter(private val list: MutableList<Pair<Drink, Doub
     }
 
     override fun onBindViewHolder(holder: EditDrinkInEventViewHolder, position: Int) {
-        val pair = list[position]
-        holder.bind(pair)
+        val item = list[position]
+        holder.bind(item)
         val deleteButton: AppCompatImageButton = holder.itemView.findViewById(R.id.deleteButton)
         deleteButton.setOnClickListener {
             list.removeAt(position)
@@ -44,11 +42,9 @@ class EditDrinkInEventViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         amountView = itemView.findViewById(R.id.list_drink_amount)
     }
 
-    fun bind(pair: Pair<Drink, Double>) {
-        val drink = pair.first
-        val amount = pair.second
-        typeView?.text = drink.type.toString()
-        nameView?.text = drink.name
-        amountView?.text = amount.toString()
+    fun bind(item: DrinkInEvent) {
+        typeView?.text = item.drink.type.toString()
+        nameView?.text = item.drink.name
+        amountView?.text = item.amount.toString()
     }
 }

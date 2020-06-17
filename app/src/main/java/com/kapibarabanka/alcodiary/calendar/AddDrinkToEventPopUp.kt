@@ -51,7 +51,7 @@ class AddDrinkToEventPopUp : AppCompatActivity(){
 
     fun onAddClicked(view: View) {
         val drink = allDrinks[drinkSpinner.selectedItemPosition]
-        val amount = amountText.text.toString().toDouble()
+        val amount = amountText.text.toString().toFloat()
         val intent = Intent()
         intent.putExtra(addedDrinkExtra, drink)
         intent.putExtra(addedAmountExtra, amount)
