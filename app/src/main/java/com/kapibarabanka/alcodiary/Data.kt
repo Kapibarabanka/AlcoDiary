@@ -1,5 +1,6 @@
 package com.kapibarabanka.alcodiary
 
+import android.widget.ImageView
 import com.kapibarabanka.alcodiary.calendar.DrinkInEvent
 import com.kapibarabanka.alcodiary.calendar.Event
 import com.kapibarabanka.alcodiary.drinks.Drink
@@ -11,10 +12,72 @@ var drinkId = 0
 var eventId = 0
 
 // Drink types
-val beer = DrinkType("Beer", 4.0f, 7.0f)
-val wine = DrinkType("Wine", 10.0f, 17.0f)
-val vodka = DrinkType("Vodka", 37.0f, 42.0f)
+val beer = DrinkType("Beer", 4.0f, 7.0f, "beer_dark")
+val wine = DrinkType("Wine", 10.0f, 17.0f, "wine_red")
+val vodka = DrinkType("Vodka", 37.0f, 42.0f, "vodka")
 val allDrinkTypes = mutableListOf(beer, wine, vodka)
+
+// DrinksTypesIcons
+val iconMap = mutableMapOf<String, Int?>(
+    "absinthe" to R.drawable.absinthe_green,
+    "beer_dark" to R.drawable.beer_dark,
+    "beer_green" to R.drawable.beer_green,
+    "beer_light" to R.drawable.beer_light,
+    "cocktail_blue" to R.drawable.cocktail_blue,
+    "cocktail_green" to R.drawable.cocktail_green,
+    "cocktail_red" to R.drawable.cocktail_red,
+    "cocktail_violet" to R.drawable.cocktail_violet,
+    "cognac_brown" to R.drawable.cognac_brown,
+    "flute_green" to R.drawable.flute_green,
+    "flute_pink" to R.drawable.flute_pink,
+    "flute_yellow" to R.drawable.flute_yellow,
+    "long_blue" to R.drawable.long_blue,
+    "long_green" to R.drawable.long_green,
+    "long_red" to R.drawable.long_red,
+    "long_violet" to R.drawable.long_violet,
+    "tincture" to R.drawable.tincture,
+    "vodka" to R.drawable.vodka,
+    "whiskey_blue" to R.drawable.whiskey_blue,
+    "whiskey_brown" to R.drawable.whiskey_brown,
+    "whiskey_green" to R.drawable.whiskey_green,
+    "whiskey_red" to R.drawable.whiskey_red,
+    "whiskey_yellow" to R.drawable.whiskey_yellow,
+    "wine_pink" to R.drawable.wine_pink,
+    "wine_red" to R.drawable.wine_red,
+    "wine_white" to R.drawable.wine_white
+)
+
+val allIcons = mutableListOf<String>(
+    "absinthe",
+    "beer_dark",
+    "beer_green",
+    "beer_light",
+    "cocktail_blue",
+    "cocktail_green",
+    "cocktail_red",
+    "cocktail_violet",
+    "cognac_brown",
+    "flute_green",
+    "flute_pink",
+    "flute_yellow",
+    "long_blue",
+    "long_green",
+    "long_red",
+    "long_violet",
+    "tincture",
+    "vodka",
+    "whiskey_blue",
+    "whiskey_brown",
+    "whiskey_green",
+    "whiskey_red",
+    "whiskey_yellow",
+    "wine_pink",
+    "wine_red",
+    "wine_white")
+
+// TODO: use content description
+
+var defaultIcon : String = "whiskey_blue"
 
 //Drinks
 val beers = mutableListOf(
@@ -61,7 +124,7 @@ val allEvents = mutableListOf(
     ))
 )
 
-val emptyDrinkType = DrinkType("", 0.0f, 0.0f)
+val emptyDrinkType = DrinkType("", 0.0f, 0.0f, defaultIcon)
 val emptyDrink = Drink("", emptyDrinkType, 0.0f, "")
 val emptyEvent = Event("", LocalDate.MIN)
 

@@ -25,11 +25,16 @@ class SaveDrinkTypePopUp : AppCompatActivity() {
         window.setLayout(width, height)
     }
 
+    fun onChooseIconClicked(view: View) {
+        // TODO : make function, that opens ChooseDrinkIconPopUp and sets image
+    }
+
     fun onSaveClicked(view: View) {
         val name = nameText.text.toString()
         val minAlco = minAlcoText.text.toString().toFloat()
         val maxAlco = maxAlcoText.text.toString().toFloat()
-        allDrinkTypes.add(DrinkType(0, name, minAlco, maxAlco))
+        // TODO: save alcoholtype
+        allDrinkTypes.add(DrinkType(name, minAlco, maxAlco, "flute_pink"))
         setResult(Activity.RESULT_OK, Intent())
         finish()
     }

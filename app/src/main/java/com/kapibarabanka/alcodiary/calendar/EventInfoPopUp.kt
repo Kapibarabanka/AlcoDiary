@@ -8,6 +8,8 @@ import android.util.DisplayMetrics
 import android.view.View
 import com.kapibarabanka.alcodiary.R
 import com.kapibarabanka.alcodiary.allEvents
+import com.kapibarabanka.alcodiary.iconMap
+import kotlinx.android.synthetic.main.choose_drink_icon_element.*
 import kotlinx.android.synthetic.main.pop_up_event_info.*
 
 

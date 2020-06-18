@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="#8d0cb7"
+        android:background="#0cb78d"
         tools:context="com.kapibarabanka.alcodiary.drinks.DrinkInfoPopUp">
 
     <LinearLayout
@@ -18,15 +18,30 @@
             android:layout_marginBottom="4dp"
             android:background="#eaeaea"
             android:orientation="vertical"
+            android:weightSum="23.5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.5"
+                android:background="#0cb78d"
+                android:orientation="vertical"></LinearLayout>
+
+        <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                app:srcCompat="@drawable/beer_dark" />
+
         <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="4">
+                android:layout_height="0dp"
+                android:layout_weight="5">
 
             <TableRow
                     android:id="@+id/nameRow"
@@ -111,8 +126,8 @@
         <TableRow
                 android:id="@+id/RateRow"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
+                android:layout_height="0dp"
+                android:layout_weight="2"
                 android:background="#eaeaea"
                 android:gravity="center">
 
@@ -130,7 +145,7 @@
         <TextView
                 android:id="@+id/commentLabel"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="#eaeaea"
                 android:gravity="center"
@@ -140,7 +155,7 @@
         <TextView
                 android:id="@+id/commentText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_weight="7"
                 android:background="#eaeaea"
                 android:paddingLeft="15sp"
@@ -149,28 +164,28 @@
 
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:layout_weight="2"
                 android:background="#eaeaea"
                 android:gravity="center"
                 android:orientation="horizontal">
 
             <Button
                     android:id="@+id/deleteButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:backgroundTint="#8d0cb7"
+                    android:backgroundTint="#d9d9d9"
                     android:onClick="onDeleteClicked"
                     android:text="Delete"
                     android:textColor="#000000" />
 
             <Button
                     android:id="@+id/editButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:backgroundTint="#b78d0c "
+                    android:backgroundTint="#d9d9d9"
                     android:onClick="onEditClicked"
                     android:text="Edit"
                     android:textColor="#000000" />

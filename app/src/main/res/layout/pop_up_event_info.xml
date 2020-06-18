@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="#8d0cb7"
+        android:background="#0cb78d"
         tools:context="com.kapibarabanka.alcodiary.calendar.EventInfoPopUp">
 
     <LinearLayout
@@ -18,16 +18,31 @@
             android:layout_marginBottom="4dp"
             android:background="#eaeaea"
             android:orientation="vertical"
-            android:weightSum="9"
+            android:weightSum="19.5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.5"
+                android:background="#0cb78d"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+        </LinearLayout>
+
         <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="5"
                 android:weightSum="3">
 
             <TableRow
@@ -35,20 +50,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:weightSum="10">
 
                 <TextView
                         android:id="@+id/nameLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingLeft="10sp"
                         android:paddingRight="@dimen/nav_header_vertical_spacing"
-                        android:text="Name" />
+                        android:text="Name"
+                        android:textSize="18sp" />
 
                 <TextView
                         android:id="@+id/nameText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@android:color/black" />
+                        android:layout_weight="8"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
             </TableRow>
 
             <TableRow
@@ -56,20 +77,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:weightSum="10">
 
                 <TextView
                         android:id="@+id/dateLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingLeft="10sp"
                         android:paddingRight="@dimen/nav_header_vertical_spacing"
-                        android:text="Date" />
+                        android:text="Date"
+                        android:textSize="18sp" />
 
                 <TextView
                         android:id="@+id/dateText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@android:color/black" />
+                        android:layout_weight="8"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
             </TableRow>
 
             <TableRow
@@ -77,20 +104,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:weightSum="10">
 
                 <TextView
                         android:id="@+id/ratingLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingLeft="10sp"
                         android:paddingRight="@dimen/nav_header_vertical_spacing"
-                        android:text="Rating" />
+                        android:text="Rating"
+                        android:textSize="18sp" />
 
                 <TextView
                         android:id="@+id/ratingText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@android:color/black" />
+                        android:layout_weight="8"
+                        android:textColor="#000000" />
             </TableRow>
         </TableLayout>
 
@@ -98,7 +130,8 @@
                 android:id="@+id/eventDrinksRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="6"
+                android:layout_weight="11"
+                android:background="#f3f3f3"
                 tools:listitem="@layout/list_item_drink_in_event">
 
         </android.support.v7.widget.RecyclerView>
@@ -113,18 +146,18 @@
             <Button
                     android:id="@+id/deleteButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:backgroundTint="#8d0cb7"
+                    android:backgroundTint="#d9d9d9"
                     android:onClick="onDeleteClicked"
                     android:text="Delete" />
 
             <Button
                     android:id="@+id/editButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:backgroundTint="#b78d0c"
+                    android:backgroundTint="#d9d9d9"
                     android:onClick="onEditClicked"
                     android:text="Edit" />
         </LinearLayout>
