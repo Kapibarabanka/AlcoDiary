@@ -14,27 +14,33 @@
             android:theme="@style/AppTheme">
         <activity
                 android:name="com.kapibarabanka.alcodiary.calendar.SaveEventPopUp"
-                android:theme="@style/AppTheme.PopMe">
+                android:theme="@style/AppTheme.PopMe"
+                android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
                 android:name="com.kapibarabanka.alcodiary.calendar.AddDrinkToEventPopUp"
-                android:theme="@style/AppTheme.PopMe">
+                android:theme="@style/AppTheme.PopMe"
+                android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
                 android:name="com.kapibarabanka.alcodiary.calendar.EventInfoPopUp"
-                android:theme="@style/AppTheme.PopMe">
+                android:theme="@style/AppTheme.PopMe"
+                android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
                 android:name="com.kapibarabanka.alcodiary.drinks.SaveDrinkPopUp"
-                android:theme="@style/AppTheme.PopMe">
+                android:theme="@style/AppTheme.PopMe"
+                android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
                 android:name="com.kapibarabanka.alcodiary.drinks.SaveDrinkTypePopUp"
-                android:theme="@style/AppTheme.PopMe">
+                android:theme="@style/AppTheme.PopMe"
+                android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
                 android:name="com.kapibarabanka.alcodiary.drinks.DrinkInfoPopUp"
-                android:theme="@style/AppTheme.PopMe">
+                android:theme="@style/AppTheme.PopMe"
+                android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
                 android:name="com.kapibarabanka.alcodiary.MainActivity"

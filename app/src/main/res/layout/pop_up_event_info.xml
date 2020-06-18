@@ -18,7 +18,7 @@
             android:layout_marginBottom="4dp"
             android:background="#eaeaea"
             android:orientation="vertical"
-            android:weightSum="19.5"
+            android:weightSum="19"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2.5"
+                android:layout_weight="2"
                 android:background="#0cb78d"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -41,7 +41,7 @@
 
         <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_weight="5"
                 android:weightSum="3">
 
@@ -130,7 +130,7 @@
                 android:id="@+id/eventDrinksRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="11"
+                android:layout_weight="10"
                 android:background="#f3f3f3"
                 tools:listitem="@layout/list_item_drink_in_event">
 
@@ -138,8 +138,8 @@
 
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:orientation="horizontal">
 

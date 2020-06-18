@@ -38,12 +38,16 @@ class EditDrinkInEventViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     private var typeView: TextView? = null
     private var nameView: TextView? = null
     private var amountView: TextView? = null
+    private var ratingView: TextView? = null
+    private var alcoholView: TextView? = null
     private var iconImage: ImageView? = null
 
     init {
         typeView = itemView.findViewById(R.id.list_drink_type)
         nameView = itemView.findViewById(R.id.list_drink_name)
         amountView = itemView.findViewById(R.id.list_drink_amount)
+        ratingView = itemView.findViewById(R.id.list_rating_amount)
+        alcoholView = itemView.findViewById(R.id.list_alcohol_amount)
         iconImage = itemView.findViewById(R.id.drink_icon_in_rv)
     }
 
@@ -51,7 +55,9 @@ class EditDrinkInEventViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     fun bind(item: DrinkInEvent) {
         typeView?.text = item.drink.type.toString()
         nameView?.text = item.drink.name
-        amountView?.text = item.amount.toString() + "L"
+        alcoholView?.text = item.drink.alcoholVolume.toString()
+        ratingView?.text = item.drink.rating.toString()
+        amountView?.text = item.amount.toString()
         iconMap[item.drink.type.icon]?.let { iconImage?.setImageResource(it) }
     }
 }

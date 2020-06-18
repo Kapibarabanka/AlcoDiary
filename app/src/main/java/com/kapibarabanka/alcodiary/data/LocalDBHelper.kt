@@ -79,6 +79,13 @@ class LocalDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null 
         db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (2, 'Wine', 10.0, 17.0, 'wine_red', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
         db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (3, 'Vodka', 37.0, 42.0, 'vodka', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
 
+        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (4, 'Cognac', 37.0, 42.0, 'cognac_brown', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (5, 'Champagne', 10.0, 20.0, 'flute_yellow', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (6, 'Long', 10.0, 20.0, 'long_red', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (7, 'Absinthe', 70.0, 76.0, 'absinthe', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+
+
+
         Log.i(BASE_TAG, "Table $TYPES_TABLE with data created")
     }
 
@@ -104,6 +111,14 @@ class LocalDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null 
         db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (8, 'Morosha', 3, 3.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
         db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (9, 'Vozduh', 3, 3.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
         db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (10, 'Zubrovka', 3, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (11, 'XO', 4, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (12, 'De Limoux', 5, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (13, 'Sea Breeze', 6, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (14, 'Xenta', 7, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
 
         Log.i(BASE_TAG, "Table $DRINKS_TABLE with data created")
     }

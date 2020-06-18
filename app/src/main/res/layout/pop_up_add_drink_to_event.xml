@@ -18,16 +18,31 @@
             android:layout_marginBottom="4dp"
             android:background="#eaeaea"
             android:orientation="vertical"
-            android:weightSum="7"
+            android:weightSum="19"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:background="#8d0cb7"
+                android:orientation="vertical">
+
+            <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10sp"
+                    app:srcCompat="@drawable/ic_add_48dp" />
+        </LinearLayout>
+
         <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="6"
+                android:layout_weight="11.5"
                 android:weightSum="2">
 
             <TableRow
@@ -40,16 +55,17 @@
 
                 <TextView
                         android:id="@+id/drinkLabel"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:paddingLeft="18sp"
+                        android:paddingLeft="24sp"
                         android:paddingRight="@dimen/nav_header_vertical_spacing"
-                        android:text="Drink" />
+                        android:text="Drink"
+                        android:textSize="18sp" />
 
                 <Spinner
                         android:id="@+id/drinkSpinner"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="7" />
 
@@ -60,25 +76,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:weightSum="10">
-
-                <TextView
-                        android:id="@+id/amountLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:paddingLeft="18sp"
-                        android:paddingRight="@dimen/nav_header_vertical_spacing"
-                        android:text="@string/drink_amount" />
 
                 <EditText
                         android:id="@+id/amountText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="7"
+                        android:layout_weight="8"
                         android:ems="10"
-                        android:inputType="number" />
+                        android:hint="Amount"
+                        android:inputType="numberDecimal"
+                        android:textSize="18sp" />
 
             </TableRow>
 
@@ -89,8 +98,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:backgroundTint="#8d0cb7"
+                android:layout_weight="2.5"
+                android:backgroundTint="#d9d9d9"
                 android:gravity="center_horizontal|center_vertical"
                 android:onClick="onAddClicked"
                 android:text="Add" />

@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="#8d0cb7"
+        android:background="#b78d0c"
         tools:context="com.kapibarabanka.alcodiary.drinks.SaveDrinkPopUp">
 
     <LinearLayout
@@ -18,50 +18,74 @@
             android:layout_marginBottom="4dp"
             android:background="#eaeaea"
             android:orientation="vertical"
+            android:weightSum="19"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:background="#b78d0c"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@android:drawable/ic_menu_edit" />
+        </LinearLayout>
+
+        <LinearLayout
                 android:id="@+id/nameRow"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:layout_weight="2"
                 android:background="#eaeaea"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:weightSum="10">
 
-            <TextView
-                    android:id="@+id/nameLabel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:text="Name"
-                    android:textColor="#000000" />
-
             <EditText
                     android:id="@+id/nameText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="6"
-                    android:background="#ffffff"
-                    android:ems="10"
+                    android:layout_weight="8"
+                    android:ems="20"
+                    android:hint="Name"
                     android:inputType="textPersonName" />
 
-            <Space
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/alcoRow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:background="#eaeaea"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+            <EditText
+                    android:id="@+id/alcoText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="8"
+                    android:ems="10"
+                    android:hint="Al. Volume, %"
+                    android:inputType="numberDecimal" />
+
         </LinearLayout>
 
         <LinearLayout
                 android:id="@+id/typeRow"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:layout_weight="2"
                 android:background="#eaeaea"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -71,7 +95,7 @@
                     android:id="@+id/typeLabel"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:gravity="center"
                     android:text="Type"
                     android:textColor="#000000" />
@@ -81,54 +105,16 @@
                     android:layout_width="0dp"
                     android:layout_height="23dp"
                     android:layout_weight="6"
-                    android:background="#ffffff" />
+                    android:spinnerMode="dropdown" />
 
-            <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-                android:id="@+id/alcoRow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#eaeaea"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:weightSum="10">
-
-            <TextView
-                    android:id="@+id/alcoLabel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:text="Al. Volume, %"
-                    android:textColor="#000000" />
-
-            <EditText
-                    android:id="@+id/alcoText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="6"
-                    android:background="#ffffff"
-                    android:ems="10"
-                    android:inputType="numberDecimal" />
-
-            <Space
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
         </LinearLayout>
 
         <TableRow
                 android:id="@+id/RateRow"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="0"
+                android:layout_weight="1.5"
                 android:gravity="center"
                 android:weightSum="10">
 
@@ -143,7 +129,7 @@
 
             <RatingBar
                     android:id="@+id/ratingBar"
-                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                    style="@android:style/Widget.Material.Light.RatingBar.Indicator"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:isIndicator="false"
@@ -165,8 +151,8 @@
         <LinearLayout
                 android:id="@+id/commentRow"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
+                android:layout_height="0dp"
+                android:layout_weight="6"
                 android:orientation="horizontal"
                 android:weightSum="14">
 
@@ -182,7 +168,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="12"
                     android:background="#ffffff"
-                    android:ems="10"
+                    android:ems="50"
                     android:gravity="top|left"
                     android:inputType="textMultiLine" />
 
@@ -197,20 +183,15 @@
                 android:layout_height="0dp"
                 android:layout_weight="0.5" />
 
-        <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4" />
-
         <Button
                 android:id="@+id/saveButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="#8d0cb7"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:backgroundTint="#d9d9d9"
                 android:onClick="onSaveClicked"
                 android:text="save"
-                android:textColor="#000000" />
+                android:textColor="#191919" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

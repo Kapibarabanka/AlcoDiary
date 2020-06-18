@@ -29,7 +29,15 @@
                 android:layout_height="0dp"
                 android:layout_weight="2.5"
                 android:background="#0cb78d"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
+
+            <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    app:srcCompat="@drawable/icon_for_pop_up_2" />
+        </LinearLayout>
 
         <ImageView
                 android:id="@+id/imageView4"
@@ -60,14 +68,16 @@
                         android:paddingLeft="18sp"
                         android:paddingRight="@dimen/nav_header_vertical_spacing"
                         android:text="Name"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
 
                 <TextView
                         android:id="@+id/nameText"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="7"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
             </TableRow>
 
             <TableRow
@@ -86,14 +96,16 @@
                         android:layout_weight="3"
                         android:paddingLeft="18sp"
                         android:text="Type"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
 
                 <TextView
                         android:id="@+id/typeText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="7"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
             </TableRow>
 
             <TableRow
@@ -112,14 +124,16 @@
                         android:layout_weight="3"
                         android:paddingLeft="18sp"
                         android:text="Alco %"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
 
                 <TextView
                         android:id="@+id/alcoText"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="7"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
             </TableRow>
         </TableLayout>
 
@@ -127,18 +141,19 @@
                 android:id="@+id/RateRow"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2"
+                android:layout_weight="1.5"
                 android:background="#eaeaea"
                 android:gravity="center">
 
             <RatingBar
                     android:id="@+id/RateDrinkConst"
-                    style="@android:style/Widget.DeviceDefault.Light.RatingBar"
+                    style="@android:style/Widget.Material.Light.RatingBar.Indicator"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:isIndicator="true"
                     android:numStars="5"
+                    android:rating="2"
                     android:stepSize="0" />
         </TableRow>
 
@@ -146,7 +161,7 @@
                 android:id="@+id/commentLabel"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:background="#eaeaea"
                 android:gravity="center"
                 android:text="Comment:"
@@ -178,7 +193,8 @@
                     android:backgroundTint="#d9d9d9"
                     android:onClick="onDeleteClicked"
                     android:text="Delete"
-                    android:textColor="#000000" />
+                    android:textColor="#191919"
+                    android:textSize="18sp" />
 
             <Button
                     android:id="@+id/editButton"
@@ -188,7 +204,8 @@
                     android:backgroundTint="#d9d9d9"
                     android:onClick="onEditClicked"
                     android:text="Edit"
-                    android:textColor="#000000" />
+                    android:textColor="#191919"
+                    android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
