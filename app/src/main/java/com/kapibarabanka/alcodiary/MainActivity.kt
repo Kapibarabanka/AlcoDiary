@@ -50,14 +50,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         displayFragment(-1)
 
-        val dbAdapter = LocalDBAdapter(this)
-        dbAdapter.open()
-
-        allDrinkTypes.addAll(dbAdapter.getAllTypes())
-        allDrinks.addAll(dbAdapter.getAllDrinks())
-        allEvents.addAll(dbAdapter.getAllEventsWithDrinks())
-
-        dbAdapter.close()
 //        GlobalScope.launch(Dispatchers.IO) {
 //            loadAllFromGlobalBase()
 //        }

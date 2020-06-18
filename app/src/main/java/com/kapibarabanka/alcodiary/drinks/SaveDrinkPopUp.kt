@@ -9,6 +9,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.kapibarabanka.alcodiary.R
+import com.kapibarabanka.alcodiary.data.ADMIN_USER
+import com.kapibarabanka.alcodiary.data.LocalDBAdapter
 import com.kapibarabanka.alcodiary.data.allDrinkTypes
 import com.kapibarabanka.alcodiary.data.allDrinks
 import kotlinx.android.synthetic.main.pop_up_save_drink.*
@@ -16,6 +18,7 @@ import kotlinx.android.synthetic.main.pop_up_save_drink.*
 class SaveDrinkPopUp : AppCompatActivity() {
     private var selectedDrinkPosition = -1
     private var itemsForTypeSpinner = allDrinkTypes.map { it.name }.toMutableList()
+    lateinit var dbAdapter: LocalDBAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +31,7 @@ class SaveDrinkPopUp : AppCompatActivity() {
         val height: Int = (dm.heightPixels * 0.7).toInt()
 
         window.setLayout(width, height)
+        dbAdapter = LocalDBAdapter(this, ADMIN_USER)
 
         itemsForTypeSpinner.add(getString(R.string.addTypeLabel))
 
@@ -82,7 +86,11 @@ class SaveDrinkPopUp : AppCompatActivity() {
         val alco = alcoText.text.toString().toDouble()
         val comment = commentText.text.toString()
         if (selectedDrinkPosition == -1) {
-            allDrinks.add(0, Drink(name, type, rating, comment))
+            val newDrink = Drink(name, type, rating, comment)
+            allDrinks.add(0, newDrink)
+            dbAdapter.open()
+            dbAdapter.insertDrink(newDrink)
+            dbAdapter.close()
         }
         else {
             val selectedDrink = allDrinks[selectedDrinkPosition]
@@ -91,6 +99,9 @@ class SaveDrinkPopUp : AppCompatActivity() {
             selectedDrink.rating = ratingBar.rating
             selectedDrink.alcoholVolume = alco
             selectedDrink.comment = comment
+            dbAdapter.open()
+            dbAdapter.updateDrink(selectedDrink)
+            dbAdapter.close()
         }
         finish()
     }

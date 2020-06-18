@@ -13,29 +13,29 @@ val emptyDrinkType = DrinkType("", 0.0f, 0.0f)
 val emptyDrink = Drink("", emptyDrinkType, 0.0f, "")
 val emptyEvent = Event("", LocalDate.MIN)
 
-fun findDrinkType(id: Int): DrinkType {
+fun findDrinkType(id: Long): DrinkType {
     return allDrinkTypes.find { it.id == id } ?: emptyDrinkType
 }
 
-fun findDrink(id: Int): Drink {
+fun findDrink(id: Long): Drink {
     return allDrinks.find {it.id == id} ?: emptyDrink
 }
 
-fun findEvent(id: Int): Event {
+fun findEvent(id: Long): Event {
     return allEvents.find {it.id == id} ?: emptyEvent
 }
 
-fun getNewDrinkTypeId(): Int {
+fun getNewDrinkTypeId(): Long {
     val max = allDrinkTypes.maxBy { it.id }?.id ?: 5
     return max + 1
 }
 
-fun getNewDrinkId(): Int {
+fun getNewDrinkId(): Long {
     val max = allDrinks.maxBy { it.id }?.id ?: 0
     return max + 1
 }
 
-fun getNewEventId(): Int {
+fun getNewEventId(): Long {
     val max = allEvents.maxBy { it.id }?.id ?: 0
     return max + 1
 }

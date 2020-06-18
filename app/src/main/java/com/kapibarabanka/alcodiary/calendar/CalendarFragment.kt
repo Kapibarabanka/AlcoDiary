@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kapibarabanka.alcodiary.R
+import com.kapibarabanka.alcodiary.data.ADMIN_USER
+import com.kapibarabanka.alcodiary.data.LocalDBAdapter
 import com.kapibarabanka.alcodiary.data.allEvents
 import kotlinx.android.synthetic.main.fragment_calendar.*
 
@@ -15,6 +17,8 @@ const val selectedEventPositionExtra = "SELECTED_EVENT_POSITION"
 const val addDrinkRequest = 2
 
 class CalendarFragment : Fragment(), OnEventListener {
+
+    lateinit var dbAdapter: LocalDBAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +29,19 @@ class CalendarFragment : Fragment(), OnEventListener {
         return inflater.inflate(R.layout.fragment_calendar, null)
     }
 
-    private val eventsAdapter = EventsListAdapter(allEvents, this)
+    private lateinit var eventsAdapter: EventsListAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        allEvents.sortByDescending { it.date }
+
+        val notNullActivity = activity
+        if (notNullActivity != null){
+            dbAdapter = LocalDBAdapter(notNullActivity, ADMIN_USER)
+            loadEvents()
+        }
+
+        eventsAdapter  = EventsListAdapter(allEvents, this)
+
         eventsRecyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = eventsAdapter
@@ -48,7 +60,7 @@ class CalendarFragment : Fragment(), OnEventListener {
     override fun onResume() {
         super.onResume()
         fabAddEvent.show()
-        allEvents.sortByDescending { it.date }
+        loadEvents()
         eventsAdapter.notifyDataSetChanged()
     }
 
@@ -65,5 +77,13 @@ class CalendarFragment : Fragment(), OnEventListener {
         val intent = Intent(activity?.applicationContext, EventInfoPopUp::class.java)
         intent.putExtra(selectedEventPositionExtra, position)
         startActivity(intent)
+    }
+
+    private fun loadEvents() {
+        allEvents.clear()
+        dbAdapter.open()
+        allEvents.addAll(dbAdapter.getAllEventsWithDrinks())
+        dbAdapter.close()
+        allEvents.sortByDescending { it.date }
     }
 }
