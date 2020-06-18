@@ -29,11 +29,17 @@ class SaveDrinkTypePopUp : AppCompatActivity() {
         dbAdapter = LocalDBAdapter(this, ADMIN_USER)
     }
 
+    fun onChooseIconClicked(view: View) {
+        // TODO : make function, that opens ChooseDrinkIconPopUp and sets image
+    }
+
     fun onSaveClicked(view: View) {
         val name = nameText.text.toString()
         val minAlco = minAlcoText.text.toString().toFloat()
         val maxAlco = maxAlcoText.text.toString().toFloat()
-        val newType = DrinkType(name, minAlco, maxAlco)
+
+        // TODO: save alcoholtype
+        val newType = DrinkType(name, minAlco, maxAlco, R.drawable.flute_pink)
 
         dbAdapter.open()
         dbAdapter.insertType(newType)

@@ -18,12 +18,12 @@
             android:weightSum="6">
 
         <ImageView
-                android:id="@+id/drinkIcon"
+                android:id="@+id/drink_icon_in_rv"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:padding="10sp"
-                app:srcCompat="@drawable/cognac_brown" />
+                app:srcCompat="@drawable/beer_green" />
 
         <LinearLayout
                 android:id="@+id/infoLayout"

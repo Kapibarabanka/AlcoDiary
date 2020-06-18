@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.util.DisplayMetrics
 import android.view.View
 import com.kapibarabanka.alcodiary.R
+
 import com.kapibarabanka.alcodiary.data.ADMIN_USER
 import com.kapibarabanka.alcodiary.data.LocalDBAdapter
 import com.kapibarabanka.alcodiary.data.allEvents

@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="#8d0cb7"
+        android:background="#b78d0c"
         tools:context="com.kapibarabanka.alcodiary.calendar.SaveEventPopUp">
 
     <LinearLayout
@@ -18,14 +18,30 @@
             android:layout_marginBottom="4dp"
             android:background="#eaeaea"
             android:orientation="vertical"
+            android:weightSum="19"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:background="#b78d0c"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@android:drawable/ic_menu_edit" />
+        </LinearLayout>
+
         <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_weight="4">
 
             <TableRow
@@ -33,21 +49,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:gravity="center_vertical">
-
-                <TextView
-                        android:id="@+id/nameLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="@dimen/nav_header_vertical_spacing"
-                        android:text="Name" />
+                    android:gravity="center"
+                    android:weightSum="10">
 
                 <EditText
                         android:id="@+id/nameText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="5"
+                        android:layout_weight="8"
                         android:ems="10"
+                        android:hint="Name"
                         android:inputType="textPersonName" />
 
             </TableRow>
@@ -57,21 +68,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:gravity="center_vertical">
-
-                <TextView
-                        android:id="@+id/dateLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="@dimen/nav_header_vertical_spacing"
-                        android:text="Date" />
+                    android:gravity="center"
+                    android:weightSum="10">
 
                 <EditText
                         android:id="@+id/dateText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="5"
+                        android:layout_weight="8"
                         android:ems="10"
+                        android:hint="Date"
                         android:inputType="date" />
 
             </TableRow>
@@ -81,44 +87,49 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:gravity="center_vertical">
-
-                <TextView
-                        android:id="@+id/ratingLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="@dimen/nav_header_vertical_spacing"
-                        android:text="Rating" />
+                    android:gravity="center"
+                    android:weightSum="10">
 
                 <EditText
                         android:id="@+id/ratingText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="5"
+                        android:layout_weight="8"
                         android:ems="10"
+                        android:hint="Rating"
                         android:inputType="textPersonName" />
 
             </TableRow>
         </TableLayout>
 
-        <android.support.v7.widget.RecyclerView
-                android:id="@+id/eventDrinksRecyclerView"
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="8"
-                tools:listitem="@layout/list_item_edit_drink_in_event">
+                android:layout_weight="10"
+                android:background="#f3f3f3"
+                android:orientation="vertical"
+                android:weightSum="9">
 
-        </android.support.v7.widget.RecyclerView>
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/eventDrinksRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8"
+                    tools:listitem="@layout/list_item_edit_drink_in_event">
 
-        <Button
-                android:id="@+id/addDrinkButton"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:onClick="onAddDrinkClicked"
-                android:text="Add drink" />
+            </android.support.v7.widget.RecyclerView>
+
+            <Button
+                    android:id="@+id/addDrinkButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClick="onAddDrinkClicked"
+                    android:text="Add drink" />
+
+        </LinearLayout>
 
         <Space
                 android:layout_width="match_parent"
@@ -130,8 +141,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:backgroundTint="#8d0cb7"
+                android:layout_weight="2"
+                android:backgroundTint="#d9d9d9"
                 android:gravity="center_horizontal|center_vertical"
                 android:onClick="onSaveClicked"
                 android:text="Save" />

@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import com.kapibarabanka.alcodiary.R
 
@@ -30,11 +31,13 @@ class DrinkViewHolder(inflater: LayoutInflater, parent: ViewGroup,
     private var dNameView: TextView? = null
     private var dTypeView: TextView? = null
     private var dMarkView: TextView? = null
+    private var dImageView: ImageView? = null
 
     init {
         dNameView = itemView.findViewById(R.id.list_drink_name)
         dTypeView = itemView.findViewById(R.id.list_drink_type)
         dMarkView = itemView.findViewById(R.id.list_drink_mark)
+        dImageView = itemView.findViewById(R.id.drink_icon_in_drinks)
 
         itemView.setOnClickListener(this)
     }
@@ -43,6 +46,7 @@ class DrinkViewHolder(inflater: LayoutInflater, parent: ViewGroup,
         dNameView?.text = drink.name
         dTypeView?.text = drink.type.name
         dMarkView?.text = drink.rating.toString()
+        dImageView?.setImageResource(drink.type.icon)
     }
 
     override fun onClick(v: View?) {

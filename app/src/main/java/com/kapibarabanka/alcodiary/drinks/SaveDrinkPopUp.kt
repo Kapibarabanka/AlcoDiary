@@ -57,7 +57,7 @@ class SaveDrinkPopUp : AppCompatActivity() {
 
         if (selectedDrinkPosition != -1) {
             val selectedDrink = allDrinks[selectedDrinkPosition]
-            val selectedDrinkTypeIndex = allDrinkTypes.indexOf(selectedDrink.type)
+            val selectedDrinkTypeIndex = allDrinkTypes.indexOfFirst { it.id == selectedDrink.type.id }
 
             nameText.setText(selectedDrink.name)
             typeSpinner.setSelection(selectedDrinkTypeIndex)

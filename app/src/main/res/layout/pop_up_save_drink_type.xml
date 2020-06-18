@@ -33,15 +33,6 @@
                 android:orientation="horizontal"
                 android:weightSum="10">
 
-            <TextView
-                    android:id="@+id/nameLabel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:text="Name"
-                    android:textColor="#000000" />
-
             <EditText
                     android:id="@+id/nameText"
                     android:layout_width="0dp"
@@ -49,7 +40,8 @@
                     android:layout_weight="6"
                     android:background="#ffffff"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:text="Name" />
 
             <Space
                     android:layout_width="0dp"
@@ -67,15 +59,6 @@
                 android:orientation="horizontal"
                 android:weightSum="10">
 
-            <TextView
-                    android:id="@+id/minAlcoLabel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:text="Min alco %"
-                    android:textColor="#000000" />
-
             <EditText
                     android:id="@+id/minAlcoText"
                     android:layout_width="0dp"
@@ -83,7 +66,8 @@
                     android:layout_weight="6"
                     android:background="#ffffff"
                     android:ems="10"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal"
+                    android:text="Min Alcohol %" />
 
             <Space
                     android:layout_width="0dp"
@@ -101,15 +85,6 @@
                 android:orientation="horizontal"
                 android:weightSum="10">
 
-            <TextView
-                    android:id="@+id/maxAlcoLabel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:text="Max alco %"
-                    android:textColor="#000000" />
-
             <EditText
                     android:id="@+id/maxAlcoText"
                     android:layout_width="0dp"
@@ -117,7 +92,8 @@
                     android:layout_weight="6"
                     android:background="#ffffff"
                     android:ems="10"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal"
+                    android:text="Max Alcohol %" />
 
             <Space
                     android:layout_width="0dp"
@@ -131,6 +107,13 @@
                 android:layout_weight="2"
                 android:background="#eaeaea"
                 android:backgroundTint="#eaeaea" />
+
+        <ImageView
+                android:id="@+id/choose_drink_icon_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/whiskey_red" />
 
         <Button
                 android:id="@+id/saveButton"

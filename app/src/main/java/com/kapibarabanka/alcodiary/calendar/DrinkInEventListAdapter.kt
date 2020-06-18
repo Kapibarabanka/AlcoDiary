@@ -3,6 +3,7 @@ package com.kapibarabanka.alcodiary.calendar
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import com.kapibarabanka.alcodiary.R
 
@@ -28,16 +29,19 @@ class DrinkInEventViewHolder(holderLayoutId: Int, inflater: LayoutInflater, pare
     private var typeView: TextView? = null
     private var nameView: TextView? = null
     private var amountView: TextView? = null
+    private var iconDrink: ImageView? = null
 
     init {
         typeView = itemView.findViewById(R.id.list_drink_type)
         nameView = itemView.findViewById(R.id.list_drink_name)
         amountView = itemView.findViewById(R.id.list_drink_amount)
+        iconDrink = itemView.findViewById(R.id.drink_icon_in_rv)
     }
 
     fun bind(item: DrinkInEvent) {
         typeView?.text = item.drink.type.toString()
         nameView?.text = item.drink.name
         amountView?.text = item.amount.toString()
+        iconDrink?.setImageResource(item.drink.type.icon)
     }
 }

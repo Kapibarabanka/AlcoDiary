@@ -27,7 +27,7 @@ class LocalDBAdapter(context: Context, val user: String) {
     private val dbHelper = LocalDBHelper(context.applicationContext)
     private lateinit var db: SQLiteDatabase
 
-    private val typeColumns = arrayOf(COL_ID, COL_NAME, COL_MIN_ALCO, COL_MAX_ALCO, COL_STATE)
+    private val typeColumns = arrayOf(COL_ID, COL_NAME, COL_MIN_ALCO, COL_MAX_ALCO, COL_ICON, COL_STATE)
     private val drinkColumns = arrayOf(COL_ID, COL_NAME, COL_TYPE, COL_RATING, COL_COMMENT)
     private val eventColumns = arrayOf(COL_ID, COL_NAME, COL_DATE, COL_RATING)
     private val drinkInEventColumns = arrayOf(COL_ID, COL_EVENT, COL_DRINK, COL_AMOUNT)
@@ -83,8 +83,6 @@ class LocalDBAdapter(context: Context, val user: String) {
     }
 
     fun updateEvent(event: Event) {
-        val cv = eventCV(event)
-        val res = update(TYPES_TABLE, cv, event.id)
         val oldDrinks = getDiesWith(event.id, COL_EVENT)
         for (die in oldDrinks) {
             if(markDeleted(DRINKS_IN_EVENTS_TABLE, die.id))
@@ -95,6 +93,8 @@ class LocalDBAdapter(context: Context, val user: String) {
             die.id = insert(DRINKS_IN_EVENTS_TABLE, cvDrink)
             Log.i(BASE_TAG, "Drink $die was added to event ${event.name}")
         }
+        val cv = eventCV(event)
+        val res = update(EVENTS_TABLE, cv, event.id)
         Log.i(BASE_TAG, "Update: $res events were updated (id = ${event.id})")
     }
 
@@ -176,9 +176,8 @@ class LocalDBAdapter(context: Context, val user: String) {
         val name = c.getString(c.getColumnIndex(COL_NAME))
         val minAlco = c.getFloat(c.getColumnIndex(COL_MIN_ALCO))
         val maxAlco = c.getFloat(c.getColumnIndex(COL_MAX_ALCO))
-        val state = c.getString(c.getColumnIndex(COL_STATE))
-        Log.i(BASE_TAG, "Loaded type $name id:$id state: $state")
-        return DrinkType(id, name, minAlco, maxAlco)
+        val icon = c.getInt(c.getColumnIndex(COL_ICON))
+        return DrinkType(id, name, minAlco, maxAlco, icon)
     }
 
 
@@ -302,6 +301,7 @@ class LocalDBAdapter(context: Context, val user: String) {
         cv.put(COL_NAME, type.name)
         cv.put(COL_MIN_ALCO, type.minAlco)
         cv.put(COL_MAX_ALCO, type.maxAlco)
+        cv.put(COL_ICON, type.icon)
         return cv
     }
 
@@ -325,7 +325,7 @@ class LocalDBAdapter(context: Context, val user: String) {
     private fun drinkInEventCV(die: DrinkInEvent, eventId: Long): ContentValues {
         val cv = ContentValues()
         cv.put(COL_EVENT, eventId)
-        cv.put(COL_DRINK, die.drink.name)
+        cv.put(COL_DRINK, die.drink.id)
         cv.put(COL_AMOUNT, die.amount)
         return cv
     }
