@@ -39,7 +39,7 @@ class SaveDrinkTypePopUp : AppCompatActivity() {
         val maxAlco = maxAlcoText.text.toString().toFloat()
 
         // TODO: save alcoholtype
-        val newType = DrinkType(name, minAlco, maxAlco, "flute_pink")
+        val newType = DrinkType(name, minAlco, maxAlco, R.drawable.flute_pink)
 
         dbAdapter.open()
         dbAdapter.insertType(newType)

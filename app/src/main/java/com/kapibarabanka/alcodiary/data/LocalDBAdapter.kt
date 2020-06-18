@@ -176,7 +176,7 @@ class LocalDBAdapter(context: Context, val user: String) {
         val name = c.getString(c.getColumnIndex(COL_NAME))
         val minAlco = c.getFloat(c.getColumnIndex(COL_MIN_ALCO))
         val maxAlco = c.getFloat(c.getColumnIndex(COL_MAX_ALCO))
-        val icon = c.getString(c.getColumnIndex(COL_ICON))
+        val icon = c.getInt(c.getColumnIndex(COL_ICON))
         return DrinkType(id, name, minAlco, maxAlco, icon)
     }
 

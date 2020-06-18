@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.data.iconMap
 
 class DrinkInEventListAdapter(private val holderLayoutId: Int, private val list: List<DrinkInEvent>)
     : RecyclerView.Adapter<DrinkInEventViewHolder>() {
@@ -43,6 +42,6 @@ class DrinkInEventViewHolder(holderLayoutId: Int, inflater: LayoutInflater, pare
         typeView?.text = item.drink.type.toString()
         nameView?.text = item.drink.name
         amountView?.text = item.amount.toString()
-        iconMap[item.drink.type.icon]?.let { iconDrink?.setImageResource(it) }
+        iconDrink?.setImageResource(item.drink.type.icon)
     }
 }

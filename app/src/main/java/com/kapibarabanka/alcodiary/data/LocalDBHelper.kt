@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import com.kapibarabanka.alcodiary.BASE_TAG
+import com.kapibarabanka.alcodiary.R
 
 private const val DB_NAME = "dbLocal.db"
 private const val SCHEMA = 1
@@ -69,15 +70,15 @@ class LocalDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null 
     private fun initTypesTable(db: SQLiteDatabase?) {
         db?.execSQL("CREATE TABLE IF NOT EXISTS $TYPES_TABLE ("+
                 "$COL_ID integer primary key autoincrement, "+
-                "$COL_NAME text, $COL_MIN_ALCO real, $COL_MAX_ALCO real, $COL_ICON text, "+
+                "$COL_NAME text, $COL_MIN_ALCO real, $COL_MAX_ALCO real, $COL_ICON integer, "+
                 "$COL_USER text default '$ADMIN_USER', "+
                 "$COL_TIME text default '$INIT_TIME', "+
                 "$COL_STATE text default '${EntryState.NON}'"+
                 ");")
 
-        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (1, 'Beer', 4.0, 7.0, 'beer_dark', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
-        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (2, 'Wine', 10.0, 17.0, 'wine_red', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
-        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (3, 'Vodka', 37.0, 42.0, 'vodka', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (1, 'Beer', 4.0, 7.0, ${R.drawable.beer_dark}, '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (2, 'Wine', 10.0, 17.0, ${R.drawable.wine_red}, '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (3, 'Vodka', 37.0, 42.0, ${R.drawable.vodka}, '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
 
         Log.i(BASE_TAG, "Table $TYPES_TABLE with data created")
     }
