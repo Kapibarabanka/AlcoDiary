@@ -68,7 +68,7 @@
                         android:layout_weight="2"
                         android:text="CHOOSE ICON"
                         android:textColor="#191919"
-                        android:textSize="20sp" />
+                        android:textSize="14sp" />
             </LinearLayout>
 
         </LinearLayout>

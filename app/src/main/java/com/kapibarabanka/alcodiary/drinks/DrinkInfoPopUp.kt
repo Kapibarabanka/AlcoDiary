@@ -9,6 +9,7 @@ import com.kapibarabanka.alcodiary.R
 import com.kapibarabanka.alcodiary.data.ADMIN_USER
 import com.kapibarabanka.alcodiary.data.LocalDBAdapter
 import com.kapibarabanka.alcodiary.data.allDrinks
+import com.kapibarabanka.alcodiary.data.iconMap
 import kotlinx.android.synthetic.main.pop_up_drink_info.*
 
 class DrinkInfoPopUp : AppCompatActivity() {
@@ -62,6 +63,7 @@ class DrinkInfoPopUp : AppCompatActivity() {
         nameText.text = drink.name
         typeText.text = drink.type.toString()
         RateDrinkConst.rating = drink.rating
+        iconMap[drink.type.icon]?.let { imageIcon?.setImageResource(it) }
         alcoText.text = drink.alcoholVolume.toString()
         commentText.text = drink.comment
     }
