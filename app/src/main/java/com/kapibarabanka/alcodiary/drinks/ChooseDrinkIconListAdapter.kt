@@ -5,8 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.kapibarabanka.alcodiary.R
+import com.kapibarabanka.alcodiary.data.iconMap
 
-class ChooseDrinkIconListAdapter(private val list: MutableList<Int>)
+class ChooseDrinkIconListAdapter(private val list: MutableList<String>)
     : RecyclerView.Adapter<ChooseDrinkIconViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChooseDrinkIconViewHolder {
@@ -31,8 +32,8 @@ class ChooseDrinkIconViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         iconImage = itemView.findViewById(R.id.icon_image_in_choose_menu)
     }
 
-    fun bind(item: Int) {
+    fun bind(item: String) {
         // TODO : use line below to set images in all cards with "drink.drinktype.icon" instead of item
-        iconImage?.setImageResource(item)
+        iconMap[item]?.let { iconImage?.setImageResource(it) }
     }
 }

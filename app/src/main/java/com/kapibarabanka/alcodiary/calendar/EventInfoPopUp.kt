@@ -11,6 +11,7 @@ import com.kapibarabanka.alcodiary.R
 import com.kapibarabanka.alcodiary.data.ADMIN_USER
 import com.kapibarabanka.alcodiary.data.LocalDBAdapter
 import com.kapibarabanka.alcodiary.data.allEvents
+import com.kapibarabanka.alcodiary.data.iconMap
 import kotlinx.android.synthetic.main.pop_up_event_info.*
 
 
