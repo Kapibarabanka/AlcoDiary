@@ -7,10 +7,12 @@ import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
 import android.view.View
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.allDrinkTypes
+import com.kapibarabanka.alcodiary.data.*
 import kotlinx.android.synthetic.main.pop_up_save_drink_type.*
 
 class SaveDrinkTypePopUp : AppCompatActivity() {
+
+    lateinit var dbAdapter: LocalDBAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +25,8 @@ class SaveDrinkTypePopUp : AppCompatActivity() {
         val height: Int = (dm.heightPixels * 0.7).toInt()
 
         window.setLayout(width, height)
+
+        dbAdapter = LocalDBAdapter(this, ADMIN_USER)
     }
 
     fun onChooseIconClicked(view: View) {
@@ -33,8 +37,16 @@ class SaveDrinkTypePopUp : AppCompatActivity() {
         val name = nameText.text.toString()
         val minAlco = minAlcoText.text.toString().toFloat()
         val maxAlco = maxAlcoText.text.toString().toFloat()
+
         // TODO: save alcoholtype
-        allDrinkTypes.add(DrinkType(name, minAlco, maxAlco, "flute_pink"))
+        val newType = DrinkType(name, minAlco, maxAlco, "flute_pink")
+
+        dbAdapter.open()
+        dbAdapter.insertType(newType)
+        dbAdapter.close()
+
+        allDrinkTypes.add(newType)
+
         setResult(Activity.RESULT_OK, Intent())
         finish()
     }

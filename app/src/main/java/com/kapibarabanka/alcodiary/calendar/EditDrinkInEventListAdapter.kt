@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.iconMap
+import com.kapibarabanka.alcodiary.data.iconMap
 
 class EditDrinkInEventListAdapter(private val list: MutableList<DrinkInEvent>)
     : RecyclerView.Adapter<EditDrinkInEventViewHolder>() {
@@ -33,7 +33,7 @@ class EditDrinkInEventListAdapter(private val list: MutableList<DrinkInEvent>)
 }
 
 class EditDrinkInEventViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_edit_drink_in_event, parent, false)){
+        RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item_edit_drink_in_event, parent, false)){
 
     private var typeView: TextView? = null
     private var nameView: TextView? = null

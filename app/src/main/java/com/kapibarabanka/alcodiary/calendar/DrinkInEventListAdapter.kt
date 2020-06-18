@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.iconMap
+import com.kapibarabanka.alcodiary.data.iconMap
 
 class DrinkInEventListAdapter(private val holderLayoutId: Int, private val list: List<DrinkInEvent>)
     : RecyclerView.Adapter<DrinkInEventViewHolder>() {
@@ -25,7 +25,7 @@ class DrinkInEventListAdapter(private val holderLayoutId: Int, private val list:
 }
 
 class DrinkInEventViewHolder(holderLayoutId: Int, inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(holderLayoutId, parent, false)){
+        RecyclerView.ViewHolder(inflater.inflate(holderLayoutId, parent, false)){
 
     private var typeView: TextView? = null
     private var nameView: TextView? = null

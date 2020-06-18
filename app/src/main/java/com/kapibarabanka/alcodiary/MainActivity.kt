@@ -5,12 +5,33 @@ import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.kapibarabanka.alcodiary.calendar.CalendarFragment
+import com.kapibarabanka.alcodiary.calendar.DrinkInEvent
+import com.kapibarabanka.alcodiary.calendar.Event
+import com.kapibarabanka.alcodiary.data.*
+import com.kapibarabanka.alcodiary.drinks.Drink
+import com.kapibarabanka.alcodiary.drinks.DrinkType
 import com.kapibarabanka.alcodiary.drinks.DrinksFragment
+import io.ktor.client.HttpClient
+import io.ktor.client.engine.android.Android
+import io.ktor.client.features.json.GsonSerializer
+import io.ktor.client.features.json.JsonFeature
+import io.ktor.client.request.get
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+
+const val BASE_URL = "https://alcodiary.herokuapp.com"
+const val DRINK_TYPES_URL = "$BASE_URL/drinkTypes"
+const val DRINKS_URL = "$BASE_URL/drinks"
+const val EVENTS_URL = "$BASE_URL/events"
+const val DRINKS_IN_EVENTS_URL = "$BASE_URL/drinksInEvents"
+const val BASE_TAG = "AlcoDiary"
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -28,6 +49,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         nav_view.setNavigationItemSelectedListener(this)
 
         displayFragment(-1)
+
+//        GlobalScope.launch(Dispatchers.IO) {
+//            loadAllFromGlobalBase()
+//        }
     }
 
     override fun onBackPressed() {
@@ -81,5 +106,42 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private suspend fun loadAllFromGlobalBase() {
+        val client = HttpClient(Android) {
+            install(JsonFeature) {
+                serializer = GsonSerializer()
+            }
+        }
+
+        val drinkTypesFromDB: List<DrinkType> = client.get(DRINK_TYPES_URL)
+        for (type in drinkTypesFromDB) {
+            Log.i(BASE_TAG, "DrinkType(${type.id}, ${type.name})")
+        }
+        allDrinkTypes.addAll(drinkTypesFromDB)
+
+        val drinksFromDB: List<DrinkData> = client.get(DRINKS_URL)
+        for (drink in drinksFromDB) {
+            Log.i(BASE_TAG, "DrinkData(${drink.id}, ${drink.name})")
+        }
+        allDrinks.addAll(drinksFromDB.map { it.getObject() })
+
+        val eventsFromDB: List<EventData> = client.get(EVENTS_URL)
+        for (event in eventsFromDB) {
+            Log.i(BASE_TAG, "EventData(${event.id}, ${event.name})")
+        }
+        allEvents.addAll(eventsFromDB.map { it.getObject() })
+
+        val drinksInEventsFromDB: List<DrinkInEventData> = client.get(DRINKS_IN_EVENTS_URL)
+        drinksInEventsFromDB.forEach { it.getAndAddObject() }
+
+        for (event in allEvents) {
+            for (drink in event.drinks) {
+                Log.i(BASE_TAG, "${event.name}: ${drink.drink.name} - ${drink.amount}")
+            }
+        }
+
+        client.close()
     }
 }

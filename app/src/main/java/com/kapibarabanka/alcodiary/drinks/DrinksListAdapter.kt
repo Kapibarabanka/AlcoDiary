@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.iconMap
+import com.kapibarabanka.alcodiary.data.iconMap
 
 class DrinksListAdapter(private val list: List<Drink>, private val onDrinkListener: OnDrinkListener)
     : RecyclerView.Adapter<DrinkViewHolder>() {

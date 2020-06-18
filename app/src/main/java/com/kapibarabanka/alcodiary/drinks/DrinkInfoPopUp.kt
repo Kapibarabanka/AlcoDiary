@@ -6,13 +6,17 @@ import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
 import android.view.View
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.allDrinks
+import com.kapibarabanka.alcodiary.data.ADMIN_USER
+import com.kapibarabanka.alcodiary.data.LocalDBAdapter
+import com.kapibarabanka.alcodiary.data.allDrinks
 import kotlinx.android.synthetic.main.pop_up_drink_info.*
 
 class DrinkInfoPopUp : AppCompatActivity() {
 
     var selectedDrinkPosition = -1
     lateinit var selectedDrink: Drink
+
+    lateinit var dbAdapter: LocalDBAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +30,8 @@ class DrinkInfoPopUp : AppCompatActivity() {
 
         window.setLayout(width, height)
 
+        dbAdapter = LocalDBAdapter(this, ADMIN_USER)
+
         selectedDrinkPosition = intent.getIntExtra(selectedDrinkPositionExtra, -1)
         selectedDrink = allDrinks[selectedDrinkPosition]
         showDrinkInfo(selectedDrink)
@@ -37,6 +43,11 @@ class DrinkInfoPopUp : AppCompatActivity() {
     }
 
     fun onDeleteClicked(view: View) {
+        val drinkToRemove = allDrinks[selectedDrinkPosition]
+        dbAdapter.open()
+        dbAdapter.deleteDrink(drinkToRemove)
+        dbAdapter.close()
+
         allDrinks.removeAt(selectedDrinkPosition)
         finish()
     }

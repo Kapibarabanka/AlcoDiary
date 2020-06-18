@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.drinks.Drink
 
 class EventsListAdapter(private val list: List<Event>, private val onEventListener: OnEventListener)
     : RecyclerView.Adapter<EventViewHolder>() {

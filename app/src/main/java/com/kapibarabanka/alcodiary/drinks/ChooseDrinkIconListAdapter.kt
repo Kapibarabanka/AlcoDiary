@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.iconMap
+import com.kapibarabanka.alcodiary.data.iconMap
 
 class ChooseDrinkIconListAdapter(private val list: MutableList<String>)
     : RecyclerView.Adapter<ChooseDrinkIconViewHolder>() {

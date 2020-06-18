@@ -7,15 +7,19 @@ import android.support.v7.widget.LinearLayoutManager
 import android.util.DisplayMetrics
 import android.view.View
 import com.kapibarabanka.alcodiary.R
-import com.kapibarabanka.alcodiary.allEvents
-import com.kapibarabanka.alcodiary.iconMap
-import kotlinx.android.synthetic.main.choose_drink_icon_element.*
+
+import com.kapibarabanka.alcodiary.data.ADMIN_USER
+import com.kapibarabanka.alcodiary.data.LocalDBAdapter
+import com.kapibarabanka.alcodiary.data.allEvents
+import com.kapibarabanka.alcodiary.data.iconMap
 import kotlinx.android.synthetic.main.pop_up_event_info.*
 
 
 class EventInfoPopUp : AppCompatActivity(){
     var selectedEventPosition = -1
     lateinit var selectedEvent: Event
+
+    lateinit var dbAdapter: LocalDBAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +33,8 @@ class EventInfoPopUp : AppCompatActivity(){
 
         window.setLayout(width, height)
 
+        dbAdapter = LocalDBAdapter(this, ADMIN_USER)
+
         selectedEventPosition = intent.getIntExtra(selectedEventPositionExtra, -1)
         selectedEvent = allEvents[selectedEventPosition]
         showEventInfo(selectedEvent)
@@ -40,6 +46,10 @@ class EventInfoPopUp : AppCompatActivity(){
     }
 
     fun onDeleteClicked(view: View) {
+        val eventToRemove = allEvents[selectedEventPosition]
+        dbAdapter.open()
+        dbAdapter.deleteEvent(eventToRemove)
+        dbAdapter.close()
         allEvents.removeAt(selectedEventPosition)
         finish()
     }
