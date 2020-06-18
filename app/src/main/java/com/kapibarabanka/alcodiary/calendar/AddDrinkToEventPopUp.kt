@@ -9,12 +9,14 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.kapibarabanka.alcodiary.R
+import com.kapibarabanka.alcodiary.data.ADMIN_USER
+import com.kapibarabanka.alcodiary.data.LocalDBAdapter
+import com.kapibarabanka.alcodiary.data.allDrinkTypes
 import com.kapibarabanka.alcodiary.data.allDrinks
 import kotlinx.android.synthetic.main.pop_up_add_drink_to_event.*
 
 
 class AddDrinkToEventPopUp : AppCompatActivity(){
-    private var itemsForDrinksSpinner = allDrinks.map { it.type.toString()+" '"+it.name+"'" }.toMutableList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,6 +62,16 @@ class AddDrinkToEventPopUp : AppCompatActivity(){
     }
 
     private fun updateDrinkAdapter() {
+        if (allDrinks.isEmpty()) {
+            val dbAdapter = LocalDBAdapter(this, ADMIN_USER)
+            allDrinkTypes.clear()
+            allDrinks.clear()
+            dbAdapter.open()
+            allDrinkTypes.addAll(dbAdapter.getAllTypes())
+            allDrinks.addAll(dbAdapter.getAllDrinks())
+            dbAdapter.close()
+        }
+        val itemsForDrinksSpinner = allDrinks.map { it.type.toString()+" '"+it.name+"'" }.toMutableList()
         val drinkAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, itemsForDrinksSpinner)
         drinkAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item)
         drinkSpinner?.adapter = drinkAdapter

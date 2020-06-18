@@ -83,8 +83,6 @@ class LocalDBAdapter(context: Context, val user: String) {
     }
 
     fun updateEvent(event: Event) {
-        val cv = eventCV(event)
-        val res = update(TYPES_TABLE, cv, event.id)
         val oldDrinks = getDiesWith(event.id, COL_EVENT)
         for (die in oldDrinks) {
             if(markDeleted(DRINKS_IN_EVENTS_TABLE, die.id))
@@ -95,6 +93,8 @@ class LocalDBAdapter(context: Context, val user: String) {
             die.id = insert(DRINKS_IN_EVENTS_TABLE, cvDrink)
             Log.i(BASE_TAG, "Drink $die was added to event ${event.name}")
         }
+        val cv = eventCV(event)
+        val res = update(EVENTS_TABLE, cv, event.id)
         Log.i(BASE_TAG, "Update: $res events were updated (id = ${event.id})")
     }
 
@@ -325,7 +325,7 @@ class LocalDBAdapter(context: Context, val user: String) {
     private fun drinkInEventCV(die: DrinkInEvent, eventId: Long): ContentValues {
         val cv = ContentValues()
         cv.put(COL_EVENT, eventId)
-        cv.put(COL_DRINK, die.drink.name)
+        cv.put(COL_DRINK, die.drink.id)
         cv.put(COL_AMOUNT, die.amount)
         return cv
     }
