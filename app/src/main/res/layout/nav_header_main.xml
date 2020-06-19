@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:paddingLeft="12sp"
+            android:paddingLeft="8sp"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
             android:text="AlcoDiary"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"

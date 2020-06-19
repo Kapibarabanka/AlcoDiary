@@ -2,25 +2,20 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="130dp"
-        android:layout_height="130dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2sp">
 
-    <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8sp"
+    <ImageView
+            android:id="@+id/icon_image_in_choose_menu"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="#e0e0e0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-                android:id="@+id/icon_image_in_choose_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#e0e0e0"
-                app:srcCompat="@drawable/cognac_brown" />
-    </LinearLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/absinthe_green"
+            tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>

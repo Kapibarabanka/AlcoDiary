@@ -75,15 +75,16 @@ class LocalDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null 
                 "$COL_STATE text default '${EntryState.NON}'"+
                 ");")
 
-        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (1, 'Beer', 4.0, 7.0, 'beer_dark', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
-        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (2, 'Wine', 10.0, 17.0, 'wine_red', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (1, 'Dark Beer', 4.0, 7.0, 'beer_dark', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (2, 'Red Wine', 10.0, 17.0, 'wine_red', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
         db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (3, 'Vodka', 37.0, 42.0, 'vodka', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
 
         db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (4, 'Cognac', 37.0, 42.0, 'cognac_brown', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
         db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (5, 'Champagne', 10.0, 20.0, 'flute_yellow', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
-        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (6, 'Long', 10.0, 20.0, 'long_red', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (6, 'Long Red', 10.0, 20.0, 'long_red', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
         db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (7, 'Absinthe', 70.0, 76.0, 'absinthe', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
-
+        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (8, 'White Wine', 10.0, 17.0, 'wine_white', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $TYPES_TABLE VALUES (9, 'Light Beer', 4.0, 7.0, 'beer_light', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
 
 
         Log.i(BASE_TAG, "Table $TYPES_TABLE with data created")
@@ -99,26 +100,31 @@ class LocalDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null 
                 "FOREIGN KEY($COL_TYPE) REFERENCES $TYPES_TABLE($COL_ID)"+
                 ");")
 
-        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (1, 'White night', 1, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (1, 'White night', 9, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
         db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (2, 'First private', 1, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
         db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (3, 'Bud', 1, 4.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
         db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (4, 'Non-filtered', 1, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
 
-        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (5, 'Bolgrad', 2, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
-        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (6, 'Vila Crimea', 2, 4.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
-        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (7, 'Mikado', 2, 3.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (5, 'French Bordeaux', 2, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (6, 'Cabernet Sauvignon', 2, 4.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (7, 'Villa Crimea', 2, 2.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
 
         db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (8, 'Morosha', 3, 3.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
-        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (9, 'Vozduh', 3, 3.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (9, 'Vozdukh', 3, 3.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
         db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (10, 'Zubrovka', 3, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
 
         db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (11, 'XO', 4, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (12, 'Louis XIII', 4, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
 
-        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (12, 'De Limoux', 5, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (13, 'De Limoux', 5, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (14, 'Veuve Clicquot', 5, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
 
-        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (13, 'Sea Breeze', 6, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (15, 'Sea Breeze', 6, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
 
-        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (14, 'Xenta', 7, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (16, 'Xenta', 7, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (17, 'Sauvignon Blanc', 8, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $DRINKS_TABLE VALUES (18, 'Pinot Grigio', 8, 5.0, '', '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
 
         Log.i(BASE_TAG, "Table $DRINKS_TABLE with data created")
     }
@@ -153,8 +159,10 @@ class LocalDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null 
                 ");")
 
         db?.execSQL("INSERT INTO $DRINKS_IN_EVENTS_TABLE VALUES (null, 1, 1, 0.3, '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $DRINKS_IN_EVENTS_TABLE VALUES (null, 1, 13, 0.5, '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
         db?.execSQL("INSERT INTO $DRINKS_IN_EVENTS_TABLE VALUES (null, 1, 2, 0.5, '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
         db?.execSQL("INSERT INTO $DRINKS_IN_EVENTS_TABLE VALUES (null, 1, 9, 0.3, '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
+        db?.execSQL("INSERT INTO $DRINKS_IN_EVENTS_TABLE VALUES (null, 1, 11, 0.3, '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
 
         db?.execSQL("INSERT INTO $DRINKS_IN_EVENTS_TABLE VALUES (null, 2, 5, 1.8, '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")
         db?.execSQL("INSERT INTO $DRINKS_IN_EVENTS_TABLE VALUES (null, 2, 6, 1.0, '$ADMIN_USER', '$INIT_TIME', '${EntryState.NON}');")

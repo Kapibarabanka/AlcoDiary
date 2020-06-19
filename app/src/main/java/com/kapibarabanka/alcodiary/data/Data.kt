@@ -68,8 +68,6 @@ val allIcons = mutableListOf<String>(
         "wine_red",
         "wine_white")
 
-// TODO: use content description
-
 var defaultIcon : String = "whiskey_blue"
 
 val emptyDrinkType = DrinkType("", 0.0f, 0.0f, defaultIcon)

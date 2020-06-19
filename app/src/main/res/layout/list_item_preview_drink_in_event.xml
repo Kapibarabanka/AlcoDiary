@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#cfcfcf"
+            android:background="#ede7f0"
             android:orientation="horizontal"
             android:weightSum="7">
 
@@ -21,8 +21,7 @@
                 android:id="@+id/drink_icon_in_rv"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#c0c0c0"
+                android:layout_weight="1.5"
                 android:padding="10sp"
                 app:srcCompat="@drawable/long_red" />
 
@@ -44,8 +43,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="left|center_vertical"
-                android:layout_weight="2"
-                android:background="#926aa1"
+                android:layout_weight="1.5"
+                android:background="#eae2ed"
                 android:gravity="center"
                 android:paddingTop="2sp"
                 android:text="@string/drink_amount"

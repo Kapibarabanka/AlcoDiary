@@ -11,41 +11,49 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
         <activity
                 android:name="com.kapibarabanka.alcodiary.calendar.SaveEventPopUp"
                 android:theme="@style/AppTheme.PopMe"
-                android:windowSoftInputMode="adjustPan">
+                android:windowSoftInputMode="adjustPan"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name="com.kapibarabanka.alcodiary.calendar.AddDrinkToEventPopUp"
                 android:theme="@style/AppTheme.PopMe"
-                android:windowSoftInputMode="adjustPan">
+                android:windowSoftInputMode="adjustPan"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name="com.kapibarabanka.alcodiary.calendar.EventInfoPopUp"
                 android:theme="@style/AppTheme.PopMe"
-                android:windowSoftInputMode="adjustPan">
+                android:windowSoftInputMode="adjustPan"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name="com.kapibarabanka.alcodiary.drinks.SaveDrinkPopUp"
                 android:theme="@style/AppTheme.PopMe"
-                android:windowSoftInputMode="adjustPan">
+                android:windowSoftInputMode="adjustPan"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name="com.kapibarabanka.alcodiary.drinks.SaveDrinkTypePopUp"
                 android:theme="@style/AppTheme.PopMe"
-                android:windowSoftInputMode="adjustPan">
+                android:windowSoftInputMode="adjustPan"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name="com.kapibarabanka.alcodiary.drinks.DrinkInfoPopUp"
                 android:theme="@style/AppTheme.PopMe"
-                android:windowSoftInputMode="adjustPan">
+                android:windowSoftInputMode="adjustPan"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name="com.kapibarabanka.alcodiary.MainActivity"
                 android:label="@string/app_name"
-                android:theme="@style/AppTheme.NoActionBar">
+                android:theme="@style/AppTheme.NoActionBar"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

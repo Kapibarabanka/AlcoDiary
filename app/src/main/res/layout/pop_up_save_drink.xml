@@ -81,6 +81,40 @@
 
         </LinearLayout>
 
+        <TableRow
+                android:id="@+id/RateRow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.5"
+                android:gravity="center"
+                android:weightSum="10">
+
+            <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="Rate"
+                    android:textColor="#000000" />
+
+            <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="@android:style/Widget.Material.Light.RatingBar.Indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="false"
+                    android:numStars="5"
+                    android:stepSize="1.0" />
+
+            <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+
+        </TableRow>
+
         <LinearLayout
                 android:id="@+id/typeRow"
                 android:layout_width="match_parent"
@@ -108,35 +142,6 @@
                     android:spinnerMode="dropdown" />
 
         </LinearLayout>
-
-        <TableRow
-                android:id="@+id/RateRow"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:weightSum="10">
-
-            <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:gravity="center"
-                    android:text="Rate"
-                    android:textColor="#000000" />
-
-            <RatingBar
-                    android:id="@+id/ratingBar"
-                    style="@android:style/Widget.Material.Light.RatingBar.Indicator"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:isIndicator="false"
-                    android:numStars="5"
-                    android:stepSize="1.0" />
-
-        </TableRow>
 
         <TextView
                 android:id="@+id/commentLabel"

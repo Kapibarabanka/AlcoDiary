@@ -58,7 +58,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:paddingLeft="10sp"
+                        android:paddingLeft="16sp"
                         android:paddingRight="@dimen/nav_header_vertical_spacing"
                         android:text="Name"
                         android:textSize="18sp" />
@@ -85,7 +85,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:paddingLeft="10sp"
+                        android:paddingLeft="16sp"
                         android:paddingRight="@dimen/nav_header_vertical_spacing"
                         android:text="Date"
                         android:textSize="18sp" />
@@ -112,7 +112,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:paddingLeft="10sp"
+                        android:paddingLeft="16sp"
                         android:paddingRight="@dimen/nav_header_vertical_spacing"
                         android:text="Rating"
                         android:textSize="18sp" />
@@ -122,7 +122,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="8"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
             </TableRow>
         </TableLayout>
 

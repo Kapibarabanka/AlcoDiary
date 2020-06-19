@@ -28,7 +28,7 @@ class SaveDrinkPopUp : AppCompatActivity() {
         windowManager.defaultDisplay.getMetrics(dm)
 
         val width: Int = (dm.widthPixels * 0.9).toInt()
-        val height: Int = (dm.heightPixels * 0.7).toInt()
+        val height: Int = (dm.heightPixels * 0.8).toInt()
 
         window.setLayout(width, height)
         dbAdapter = LocalDBAdapter(this, ADMIN_USER)
@@ -111,5 +111,4 @@ class SaveDrinkPopUp : AppCompatActivity() {
         drinkTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item)
         typeSpinner?.adapter = drinkTypeAdapter
     }
-
 }

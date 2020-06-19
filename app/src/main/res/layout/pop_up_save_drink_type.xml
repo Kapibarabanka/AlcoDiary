@@ -37,40 +37,35 @@
                     android:layout_height="match_parent"
                     android:background="#00FFFFFF"
                     app:srcCompat="@android:drawable/ic_menu_edit" />
+
         </LinearLayout>
 
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:orientation="horizontal"
-                android:weightSum="4">
+                android:weightSum="10">
 
-            <ImageView
-                    android:id="@+id/choose_drink_icon_button"
+            <Space
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:padding="5sp"
-                    app:srcCompat="@drawable/whiskey_red" />
+                    android:layout_weight="2.75" />
 
-            <LinearLayout
+            <Spinner
+                    android:id="@+id/spinnerIcon"
+                    style="@style/Widget.AppCompat.Light.Spinner.DropDown.ActionBar"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:orientation="vertical"
-                    android:padding="15sp">
+                    android:layout_weight="4.5"
+                    android:backgroundTint="#eaeaea"
+                    android:spinnerMode="dropdown"
+                    tools:listitem="@layout/choose_drink_icon_element" />
 
-                <Button
-                        android:id="@+id/choose_icon_button"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:text="CHOOSE ICON"
-                        android:textColor="#191919"
-                        android:textSize="14sp" />
-            </LinearLayout>
-
+            <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.75" />
         </LinearLayout>
 
         <LinearLayout
@@ -139,7 +134,7 @@
         <Space
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="4.5" />
+                android:layout_weight="3.5" />
 
         <Button
                 android:id="@+id/saveButton"

@@ -25,8 +25,8 @@ class AddDrinkToEventPopUp : AppCompatActivity(){
         val dm = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(dm)
 
-        val width: Int = (dm.widthPixels * 0.7).toInt()
-        val height: Int = (dm.heightPixels * 0.4).toInt()
+        val width: Int = (dm.widthPixels * 0.6).toInt()
+        val height: Int = (dm.heightPixels * 0.5).toInt()
 
         window.setLayout(width, height)
 
